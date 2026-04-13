@@ -1,8 +1,8 @@
-PYTHON GENEROVÁNÍ JSON
+PYTHON GENEROVÁNÍ JSON (ALL SHEETS)
 
 import pandas as pd, re, json
 
-df = pd.read_excel("kalkulacka.xlsx", header=None)
+xls = pd.ExcelFile("kalkulacka.xlsx")
 
 def valid_hs(x):
     return re.fullmatch(r"\d{6,10}", str(x).replace(" ","")) is not None
@@ -16,20 +16,23 @@ def fmt(x):
     except:
         return ""
 
-df[0] = df[0].ffill()
-
 data=[]
-for _,r in df.iterrows():
-    hs=str(r[0]).replace(" ","")
-    if not valid_hs(hs): continue
 
-    data.append({
-        "HS": hs,
-        "Country": "YOUR_SHEET",
-        "Nominal_2026": fmt(r[5]),
-        "Nominal_2027": fmt(r[6]),
-        "Nominal_2028": fmt(r[7]),
-        "ProdType": str(r[8]).strip() if pd.notna(r[8]) else ""
-    })
+for sheet in xls.sheet_names:
+    df=pd.read_excel(xls, sheet_name=sheet, header=None)
+    df[0]=df[0].ffill()
+
+    for _,r in df.iterrows():
+        hs=str(r[0]).replace(" ","")
+        if not valid_hs(hs): continue
+
+        data.append({
+            "HS": hs,
+            "Country": sheet,
+            "Nominal_2026": fmt(r[5]),
+            "Nominal_2027": fmt(r[6]),
+            "Nominal_2028": fmt(r[7]),
+            "ProdType": str(r[8]).strip() if pd.notna(r[8]) else ""
+        })
 
 json.dump({"version":"YYYY-MM-DD","data":data}, open("nominal.json","w"), indent=2)
