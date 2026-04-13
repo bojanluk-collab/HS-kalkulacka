@@ -3,22 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <title>HS Kalkulačka</title>
+
 <style>
 *{box-sizing:border-box;}
 body{font-family:system-ui;background:#f5f7fb;display:flex;justify-content:center;padding:40px;margin:0;}
 .app{max-width:460px;width:100%;}
 .card{background:white;border-radius:12px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,0.05);position:relative;}
-input{width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ddd;}
-button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;color:white;font-weight:600;}
+
+input{width:100%;padding:10px 12px;margin-bottom:15px;border-radius:8px;border:1px solid #ddd;}
+button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;color:white;font-weight:600;cursor:pointer;}
+
 .value{display:flex;justify-content:space-between;margin:6px 0;}
 .copy{cursor:pointer;color:#888;}
 .copy:hover{color:black;}
-.menu{display:none;position:absolute;right:10px;top:45px;background:white;border:1px solid #ddd;border-radius:8px;padding:10px;}
+
 .gear{position:absolute;right:15px;top:15px;cursor:pointer;}
+
+.menu{
+    display:none;
+    position:absolute;
+    right:10px;
+    top:45px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:10px;
+    min-width:160px;
+}
+
+.menu-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 5px;
+    cursor:pointer;
+}
+
+.menu-row:hover{
+    background:#f3f4f6;
+    border-radius:6px;
+}
+
 .footer{text-align:center;font-size:12px;color:#888;margin-top:10px;}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:black;color:white;padding:10px;border-radius:8px;opacity:0;transition:.3s;}
+
+.toast{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:black;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    opacity:0;
+    transition:.3s;
+}
 .toast.show{opacity:1;}
 </style>
+
 </head>
 <body>
 
@@ -28,14 +70,24 @@ button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;
 <div class="gear" onclick="toggleMenu()">⚙️</div>
 
 <div id="menu" class="menu">
-<label><input type="checkbox" id="showA"> A</label><br>
-<label><input type="checkbox" id="showB"> B</label>
+    <label class="menu-row">
+        <input type="checkbox" id="showA"> 
+        <span>Benchmark A</span>
+    </label>
+
+    <label class="menu-row">
+        <input type="checkbox" id="showB"> 
+        <span>Benchmark B</span>
+    </label>
 </div>
 
 <h2>HS Kalkulačka</h2>
 
-<input id="hs" placeholder="HS kód">
-<input id="country" placeholder="Země">
+<input id="hs" list="hsList" placeholder="HS kód">
+<datalist id="hsList"></datalist>
+
+<input id="country" list="countryList" placeholder="Země">
+<datalist id="countryList"></datalist>
 
 <button onclick="calculate()">Spočítat</button>
 
@@ -48,6 +100,6 @@ button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;
 
 <div id="toast" class="toast">Zkopírováno</div>
 
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>

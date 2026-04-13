@@ -40,9 +40,29 @@ function row(label,val){
 async function loadData(){
  const n=await fetch('nominal.json').then(r=>r.json());
  const b=await fetch('benchmark.json').then(r=>r.json());
- nominal=n.data; benchmark=b.data;
+
+ nominal=n.data;
+ benchmark=b.data;
+
  document.getElementById('version').innerText="Verze dat: "+n.version;
+
  loadSettings();
+
+ // našeptávač HS
+ const hsList = document.getElementById('hsList');
+ [...new Set(nominal.map(x => x.HS))].forEach(h => {
+     const o = document.createElement('option');
+     o.value = h;
+     hsList.appendChild(o);
+ });
+
+ // našeptávač zemí
+ const countryList = document.getElementById('countryList');
+ [...new Set(nominal.map(x => x.Country))].forEach(c => {
+     const o = document.createElement('option');
+     o.value = c;
+     countryList.appendChild(o);
+ });
 }
 
 function calculate(){
@@ -68,8 +88,8 @@ function calculate(){
   html+=row("Nominal",x.Nominal);
   html+=`Typ: ${prod}<br>`;
 
-  if(showA && A) html+=row("A",A.Benchmark);
-  if(showB && B) html+=row("B",B.Benchmark);
+  if(showA && A) html+=row("Benchmark A",A.Benchmark);
+  if(showB && B) html+=row("Benchmark B",B.Benchmark);
 
   html+="</div>";
  });
