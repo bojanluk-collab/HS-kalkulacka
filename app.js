@@ -9,15 +9,25 @@ function copyToClipboard(text){
     navigator.clipboard.writeText(text);
 }
 
+function valueRow(label, value){
+    return `
+        <div class="value">
+            <span>${label}: ${value}</span>
+            <span class="copy" onclick="copyToClipboard('${value}')">📋</span>
+        </div>
+    `;
+}
+
 async function loadData(){
-    const nomRaw = await fetch('./nominal.json?v=3').then(r=>r.json());
-    const benchRaw = await fetch('./benchmark.json?v=3').then(r=>r.json());
+    const nomRaw = await fetch('./nominal.json?v=4').then(r=>r.json());
+    const benchRaw = await fetch('./benchmark.json?v=4').then(r=>r.json());
 
     nominal = nomRaw.data;
     benchmark = benchRaw.data;
     version = nomRaw.version;
 
-    document.getElementById('version').innerHTML="Verze dat: "+version;
+    document.getElementById('version').innerText =
+        "Verze dat: " + version;
 
     [...new Set(nominal.map(x=>x.HS))].forEach(h=>{
         let o=document.createElement('option'); o.value=h; hsList.appendChild(o);
@@ -33,29 +43,32 @@ function calculate(){
     const countryInput=document.getElementById('country').value.trim();
     const country=countryInput.toLowerCase();
 
-    let html=`<b>HS:</b> ${hs}<br><br>`;
+    let html = `<b>HS:</b> ${hs}`;
 
     if(!countryInput){
         const all=nominal.filter(x=>x.HS===hs);
+
         if(!all.length){
-            result.innerHTML="Pro tento HS kód neexistují žádná data.";
+            result.innerHTML="Žádná data.";
             return;
         }
 
-        html+=`<b>Nalezeno zemí:</b> ${all.length}<br><br>`;
-
         all.forEach(x=>{
             const prod=normalizeProd(x.ProdType);
-            const bmMatches=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
 
-            const bmA=bmMatches.find(b=>b.Source==="A");
-            const bmB=bmMatches.find(b=>b.Source==="B");
+            const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
+            const bmA=bm.find(b=>b.Source==="A");
+            const bmB=bm.find(b=>b.Source==="B");
 
-            html+=`<hr><b>${x.Country}</b><br>
-            Nominal: ${x.Nominal} <button onclick="copyToClipboard('${x.Nominal}')">📋</button><br>
-            Typ výroby: ${prod||"(neurčený)"}<br><br>
-            Benchmark A: ${bmA?bmA.Benchmark:"není definován"} ${bmA?`<button onclick="copyToClipboard('${bmA.Benchmark}')">📋</button>`:""}<br>
-            Benchmark B: ${bmB?bmB.Benchmark:"není definován"} ${bmB?`<button onclick="copyToClipboard('${bmB.Benchmark}')">📋</button>`:""}<br>`;
+            html += `
+            <div class="section">
+                <b>${x.Country}</b>
+                ${valueRow("Nominal", x.Nominal)}
+                <div>Typ výroby: ${prod}</div>
+                ${valueRow("Benchmark A", bmA ? bmA.Benchmark : "-")}
+                ${valueRow("Benchmark B", bmB ? bmB.Benchmark : "-")}
+            </div>
+            `;
         });
 
         result.innerHTML=html;
@@ -65,25 +78,28 @@ function calculate(){
     const candidates=nominal.filter(x=>x.HS===hs && x.Country.toLowerCase()===country);
 
     if(!candidates.length){
-        result.innerHTML="Pro tuto kombinaci není definována nominální hodnota.";
+        result.innerHTML="Nenalezeno.";
         return;
     }
 
-    html+=`<b>Země:</b> ${countryInput}<br><br>`;
+    html += `<div class="section"><b>${countryInput}</b>`;
 
     candidates.forEach(x=>{
         const prod=normalizeProd(x.ProdType);
-        const bmMatches=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
 
-        const bmA=bmMatches.find(b=>b.Source==="A");
-        const bmB=bmMatches.find(b=>b.Source==="B");
+        const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
+        const bmA=bm.find(b=>b.Source==="A");
+        const bmB=bm.find(b=>b.Source==="B");
 
-        html+=`<hr>
-        Nominal: ${x.Nominal} <button onclick="copyToClipboard('${x.Nominal}')">📋</button><br>
-        Typ výroby: ${prod||"(neurčený)"}<br><br>
-        Benchmark A: ${bmA?bmA.Benchmark:"není definován"} ${bmA?`<button onclick="copyToClipboard('${bmA.Benchmark}')">📋</button>`:""}<br>
-        Benchmark B: ${bmB?bmB.Benchmark:"není definován"} ${bmB?`<button onclick="copyToClipboard('${bmB.Benchmark}')">📋</button>`:""}<br>`;
+        html += `
+            ${valueRow("Nominal", x.Nominal)}
+            <div>Typ výroby: ${prod}</div>
+            ${valueRow("Benchmark A", bmA ? bmA.Benchmark : "-")}
+            ${valueRow("Benchmark B", bmB ? bmB.Benchmark : "-")}
+        `;
     });
+
+    html += "</div>";
 
     result.innerHTML=html;
 }
