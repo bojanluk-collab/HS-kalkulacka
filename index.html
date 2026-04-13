@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>HS Kalkulačka</title>
+<style>
+body { font-family: Arial; max-width: 600px; margin: 40px auto; }
+input, select, button { width: 100%; padding: 10px; margin: 10px 0; }
+.result { background: #f3f3f3; padding: 15px; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h2>HS Kalkulačka</h2>
+
+<label>HS kód</label>
+<input id="hs" list="hsList">
+<datalist id="hsList"></datalist>
+
+<label>Země</label>
+<input id="country" list="countryList">
+<datalist id="countryList"></datalist>
+
+<button onclick="calculate()">Spočítat</button>
+
+<div class="result" id="result"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
