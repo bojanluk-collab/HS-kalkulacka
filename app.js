@@ -1,144 +1,60 @@
 let nominal = [];
 let benchmark = [];
 
-const DEBUG = true;
-
-function log(...args) {
-    if (DEBUG) console.log(...args);
-}
-
 function normalizeHS(hs) {
-    return String(hs)
-        .replace(/\s+/g, '')
-        .replace(/\.0$/, '')
-        .trim();
+    return String(hs).replace(/\s+/g,'').trim();
 }
 
-function normalizeProd(p) {
-    return String(p || "")
-        .replace(/[()]/g, '')
-        .trim();
+function normalizeProd(p){
+    return String(p||"").trim();
 }
 
-async function loadData() {
-    nominal = await fetch('nominal.json').then(r => r.json());
-    benchmark = await fetch('benchmark.json').then(r => r.json());
+async function loadData(){
+    nominal = await fetch('./nominal.json').then(r=>r.json());
+    benchmark = await fetch('./benchmark.json').then(r=>r.json());
 
-    // normalizace dat
-    nominal = nominal.map(x => ({
-        ...x,
-        HS: normalizeHS(x.HS),
-        ProdType: normalizeProd(x.ProdType)
-    }));
-
-    benchmark = benchmark.map(x => ({
-        ...x,
-        HS: normalizeHS(x.HS),
-        ProdType: normalizeProd(x.ProdType)
-    }));
-
-    log("Loaded nominal:", nominal.length);
-    log("Loaded benchmark:", benchmark.length);
-
-    // HS našeptávač
-    const hsSet = [...new Set(nominal.map(x => x.HS))];
-    const hsList = document.getElementById('hsList');
-    hsSet.forEach(h => {
-        const opt = document.createElement('option');
-        opt.value = h;
-        hsList.appendChild(opt);
+    const hsSet=[...new Set(nominal.map(x=>x.HS))];
+    hsSet.forEach(h=>{
+        let o=document.createElement('option');
+        o.value=h;
+        hsList.appendChild(o);
     });
 
-    // země našeptávač
-    const countries = [...new Set(nominal.map(x => x.Country))];
-    const cList = document.getElementById('countryList');
-    countries.forEach(c => {
-        const opt = document.createElement('option');
-        opt.value = c;
-        cList.appendChild(opt);
+    const countries=[...new Set(nominal.map(x=>x.Country))];
+    countries.forEach(c=>{
+        let o=document.createElement('option');
+        o.value=c;
+        countryList.appendChild(o);
     });
 }
 
-function calculate() {
-    const rawHS = document.getElementById('hs').value;
-    const countryInput = document.getElementById('country').value;
+function calculate(){
+    const hs=normalizeHS(hsInput.value);
+    const country=countryInput.value.toLowerCase();
 
-    const hs = normalizeHS(rawHS);
-    const country = countryInput.trim().toLowerCase();
-
-    log("---- CALC START ----");
-    log("HS:", hs, "Country:", country);
-
-    // 1️⃣ všechny kandidáty z Nominal
-    const candidates = nominal.filter(x =>
-        x.Country.toLowerCase() === country &&
-        x.HS === hs
+    const candidates=nominal.filter(x=>
+        x.HS===hs && x.Country.toLowerCase()===country
     );
 
-    log("Nominal candidates:", candidates);
-
-    if (candidates.length === 0) {
-        document.getElementById('result').innerHTML = "Nenalezeno v Nominal";
+    if(!candidates.length){
+        result.innerHTML="Nenalezeno v Nominal";
         return;
     }
 
-    // 2️⃣ validní (bez "_")
-    const valid = candidates.filter(x =>
-        x.Nominal !== "_" &&
-        x.Nominal !== "" &&
-        x.Nominal != null
-    );
+    let html="";
+    candidates.forEach((x,i)=>{
+        const prod=normalizeProd(x.ProdType);
 
-    const used = valid.length ? valid : candidates;
+        let bm=benchmark.find(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
 
-    log("Used candidates:", used);
-
-    // 3️⃣ párování benchmarku pro každou variantu
-    const results = used.map(x => {
-        const prod = normalizeProd(x.ProdType);
-
-        // exact match
-        let bm = benchmark.find(b =>
-            b.HS === hs &&
-            b.ProdType === prod
-        );
-
-        // fallback bez typu výroby
-        if (!bm) {
-            bm = benchmark.find(b =>
-                b.HS === hs &&
-                (!b.ProdType || b.ProdType === "")
-            );
-        }
-
-        return {
-            Nominal: x.Nominal,
-            ProdType: prod || "(neurčený)",
-            Benchmark: bm ? bm.Benchmark : "nenalezen"
-        };
+        html+=`<hr>
+        Varianta ${i+1}<br>
+        Nominal: ${x.Nominal}<br>
+        Typ výroby: ${prod||"(neurčený)"}<br>
+        Benchmark: ${bm?bm.Benchmark:"nenalezen"}<br>`;
     });
 
-    log("Final results:", results);
-
-    // 4️⃣ výpis
-    let html = `
-        <b>HS:</b> ${hs}<br>
-        <b>Země:</b> ${countryInput}<br><br>
-    `;
-
-    results.forEach((r, i) => {
-        html += `
-            <hr>
-            <b>Varianta ${i + 1}</b><br>
-            Nominal: ${r.Nominal}<br>
-            Typ výroby: ${r.ProdType}<br>
-            Benchmark: ${r.Benchmark}<br>
-        `;
-    });
-
-    document.getElementById('result').innerHTML = html;
-
-    log("---- CALC END ----");
+    result.innerHTML=html;
 }
 
 loadData();
