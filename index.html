@@ -3,8 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>HS Kalkulačka</title>
+
+<style>
+body {
+  font-family: Arial;
+  max-width: 600px;
+  margin: 40px auto;
+}
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+.result {
+  background: #f3f3f3;
+  padding: 15px;
+  margin-top: 20px;
+}
+</style>
+
 </head>
 <body>
+
 <h2>HS Kalkulačka</h2>
 
 <label>HS kód</label>
@@ -17,8 +37,9 @@
 
 <button onclick="calculate()">Spočítat</button>
 
-<div id="result"></div>
+<div id="result" class="result"></div>
 
 <script src="app.js"></script>
+
 </body>
 </html>

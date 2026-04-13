@@ -2,59 +2,75 @@ let nominal = [];
 let benchmark = [];
 
 function normalizeHS(hs) {
-    return String(hs).replace(/\s+/g,'').trim();
+    return String(hs).replace(/\s+/g, '').trim();
 }
 
-function normalizeProd(p){
-    return String(p||"").trim();
+function normalizeProd(p) {
+    return String(p || "").trim();
 }
 
-async function loadData(){
-    nominal = await fetch('./nominal.json').then(r=>r.json());
-    benchmark = await fetch('./benchmark.json').then(r=>r.json());
+async function loadData() {
+    nominal = await fetch('./nominal.json').then(r => r.json());
+    benchmark = await fetch('./benchmark.json').then(r => r.json());
 
-    const hsSet=[...new Set(nominal.map(x=>x.HS))];
-    hsSet.forEach(h=>{
-        let o=document.createElement('option');
-        o.value=h;
-        hsList.appendChild(o);
+    // HS našeptávač
+    const hsSet = [...new Set(nominal.map(x => x.HS))];
+    const hsList = document.getElementById('hsList');
+
+    hsSet.forEach(h => {
+        const opt = document.createElement('option');
+        opt.value = h;
+        hsList.appendChild(opt);
     });
 
-    const countries=[...new Set(nominal.map(x=>x.Country))];
-    countries.forEach(c=>{
-        let o=document.createElement('option');
-        o.value=c;
-        countryList.appendChild(o);
+    // Země našeptávač
+    const countries = [...new Set(nominal.map(x => x.Country))];
+    const countryList = document.getElementById('countryList');
+
+    countries.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        countryList.appendChild(opt);
     });
 }
 
-function calculate(){
-    const hs=normalizeHS(hsInput.value);
-    const country=countryInput.value.toLowerCase();
+function calculate() {
+    const hs = normalizeHS(document.getElementById('hs').value);
+    const country = document.getElementById('country').value.toLowerCase();
 
-    const candidates=nominal.filter(x=>
-        x.HS===hs && x.Country.toLowerCase()===country
+    const candidates = nominal.filter(x =>
+        x.HS === hs &&
+        x.Country.toLowerCase() === country
     );
 
-    if(!candidates.length){
-        result.innerHTML="Nenalezeno v Nominal";
+    if (candidates.length === 0) {
+        document.getElementById('result').innerHTML = "Nenalezeno v Nominal";
         return;
     }
 
-    let html="";
-    candidates.forEach((x,i)=>{
-        const prod=normalizeProd(x.ProdType);
+    let html = `
+        <b>HS:</b> ${hs}<br>
+        <b>Země:</b> ${document.getElementById('country').value}<br><br>
+    `;
 
-        let bm=benchmark.find(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
+    candidates.forEach((x, i) => {
+        const prod = normalizeProd(x.ProdType);
 
-        html+=`<hr>
-        Varianta ${i+1}<br>
-        Nominal: ${x.Nominal}<br>
-        Typ výroby: ${prod||"(neurčený)"}<br>
-        Benchmark: ${bm?bm.Benchmark:"nenalezen"}<br>`;
+        const bm = benchmark.find(b =>
+            b.HS === hs &&
+            normalizeProd(b.ProdType) === prod
+        );
+
+        html += `
+            <hr>
+            <b>Varianta ${i + 1}</b><br>
+            Nominal: ${x.Nominal}<br>
+            Typ výroby: ${prod || "(neurčený)"}<br>
+            Benchmark: ${bm ? bm.Benchmark : "nenalezen"}<br>
+        `;
     });
 
-    result.innerHTML=html;
+    document.getElementById('result').innerHTML = html;
 }
 
 loadData();
