@@ -1,107 +1,80 @@
-let nominal = [];
-let benchmark = [];
-let version = "";
+let nominal=[], benchmark=[];
 
-function normalizeHS(hs){ return String(hs).replace(/\s+/g,'').trim(); }
-function normalizeProd(p){ return String(p||"").trim(); }
-
-function copyToClipboard(text){
-    navigator.clipboard.writeText(text);
+function toggleMenu(){
+ const m=document.getElementById('menu');
+ m.style.display=m.style.display==='block'?'none':'block';
 }
 
-function valueRow(label, value){
-    return `
-        <div class="value">
-            <span>${label}: ${value}</span>
-            <span class="copy" onclick="copyToClipboard('${value}')">📋</span>
-        </div>
-    `;
+function showToast(){
+ const t=document.getElementById('toast');
+ t.classList.add('show');
+ setTimeout(()=>t.classList.remove('show'),1000);
+}
+
+function copyToClipboard(t){
+ navigator.clipboard.writeText(t);
+ showToast();
+}
+
+function saveSettings(){
+ localStorage.setItem('showA',document.getElementById('showA').checked);
+ localStorage.setItem('showB',document.getElementById('showB').checked);
+}
+
+function loadSettings(){
+ document.getElementById('showA').checked = localStorage.getItem('showA') !== 'false';
+ document.getElementById('showB').checked = localStorage.getItem('showB') !== 'false';
+}
+
+document.addEventListener('change', e=>{
+ if(e.target.id==='showA'||e.target.id==='showB') saveSettings();
+});
+
+function normalizeHS(h){return String(h).replace(/\s+/g,'').trim();}
+function normalizeProd(p){return String(p||'').trim();}
+
+function row(label,val){
+ return `<div class="value">${label}: ${val}<span class="copy" onclick="copyToClipboard('${val}')">📋</span></div>`;
 }
 
 async function loadData(){
-    const nomRaw = await fetch('./nominal.json?v=4').then(r=>r.json());
-    const benchRaw = await fetch('./benchmark.json?v=4').then(r=>r.json());
-
-    nominal = nomRaw.data;
-    benchmark = benchRaw.data;
-    version = nomRaw.version;
-
-    document.getElementById('version').innerText =
-        "Verze dat: " + version;
-
-    [...new Set(nominal.map(x=>x.HS))].forEach(h=>{
-        let o=document.createElement('option'); o.value=h; hsList.appendChild(o);
-    });
-
-    [...new Set(nominal.map(x=>x.Country))].forEach(c=>{
-        let o=document.createElement('option'); o.value=c; countryList.appendChild(o);
-    });
+ const n=await fetch('nominal.json').then(r=>r.json());
+ const b=await fetch('benchmark.json').then(r=>r.json());
+ nominal=n.data; benchmark=b.data;
+ document.getElementById('version').innerText="Verze dat: "+n.version;
+ loadSettings();
 }
 
 function calculate(){
-    const hs=normalizeHS(document.getElementById('hs').value);
-    const countryInput=document.getElementById('country').value.trim();
-    const country=countryInput.toLowerCase();
+ const hs=normalizeHS(document.getElementById('hs').value);
+ const country=document.getElementById('country').value.trim().toLowerCase();
+ const showA=document.getElementById('showA').checked;
+ const showB=document.getElementById('showB').checked;
 
-    let html = `<b>HS:</b> ${hs}`;
+ const data = country ? nominal.filter(x=>x.HS===hs && x.Country.toLowerCase()===country)
+                      : nominal.filter(x=>x.HS===hs);
 
-    if(!countryInput){
-        const all=nominal.filter(x=>x.HS===hs);
+ if(!data.length){result.innerHTML="Nenalezeno";return;}
 
-        if(!all.length){
-            result.innerHTML="Žádná data.";
-            return;
-        }
+ let html=`<b>HS:</b> ${hs}`;
 
-        all.forEach(x=>{
-            const prod=normalizeProd(x.ProdType);
+ data.forEach(x=>{
+  const prod=normalizeProd(x.ProdType);
+  const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
+  const A=bm.find(b=>b.Source==='A');
+  const B=bm.find(b=>b.Source==='B');
 
-            const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
-            const bmA=bm.find(b=>b.Source==="A");
-            const bmB=bm.find(b=>b.Source==="B");
+  html+=`<div class="section"><b>${x.Country}</b>`;
+  html+=row("Nominal",x.Nominal);
+  html+=`Typ: ${prod}<br>`;
 
-            html += `
-            <div class="section">
-                <b>${x.Country}</b>
-                ${valueRow("Nominal", x.Nominal)}
-                <div>Typ výroby: ${prod}</div>
-                ${valueRow("Benchmark A", bmA ? bmA.Benchmark : "-")}
-                ${valueRow("Benchmark B", bmB ? bmB.Benchmark : "-")}
-            </div>
-            `;
-        });
+  if(showA && A) html+=row("A",A.Benchmark);
+  if(showB && B) html+=row("B",B.Benchmark);
 
-        result.innerHTML=html;
-        return;
-    }
+  html+="</div>";
+ });
 
-    const candidates=nominal.filter(x=>x.HS===hs && x.Country.toLowerCase()===country);
-
-    if(!candidates.length){
-        result.innerHTML="Nenalezeno.";
-        return;
-    }
-
-    html += `<div class="section"><b>${countryInput}</b>`;
-
-    candidates.forEach(x=>{
-        const prod=normalizeProd(x.ProdType);
-
-        const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
-        const bmA=bm.find(b=>b.Source==="A");
-        const bmB=bm.find(b=>b.Source==="B");
-
-        html += `
-            ${valueRow("Nominal", x.Nominal)}
-            <div>Typ výroby: ${prod}</div>
-            ${valueRow("Benchmark A", bmA ? bmA.Benchmark : "-")}
-            ${valueRow("Benchmark B", bmB ? bmB.Benchmark : "-")}
-        `;
-    });
-
-    html += "</div>";
-
-    result.innerHTML=html;
+ result.innerHTML=html;
 }
 
 loadData();

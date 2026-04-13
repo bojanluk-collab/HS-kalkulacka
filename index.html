@@ -3,123 +3,51 @@
 <head>
 <meta charset="UTF-8">
 <title>HS Kalkulačka</title>
-
 <style>
-body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background: #f5f7fb;
-    display: flex;
-    justify-content: center;
-    padding: 40px 10px;
-}
-
-.app {
-    width: 100%;
-    max-width: 480px;
-}
-
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-h2 {
-    margin-top: 0;
-    font-size: 20px;
-}
-
-label {
-    font-size: 13px;
-    color: #666;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background: #3b82f6;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #2563eb;
-}
-
-.result {
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-.section {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-}
-
-.value {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5px 0;
-}
-
-.copy {
-    cursor: pointer;
-    font-size: 14px;
-    color: #888;
-}
-
-.copy:hover {
-    color: black;
-}
-
-.footer {
-    text-align: center;
-    font-size: 12px;
-    color: #888;
-    margin-top: 15px;
-}
+*{box-sizing:border-box;}
+body{font-family:system-ui;background:#f5f7fb;display:flex;justify-content:center;padding:40px;margin:0;}
+.app{max-width:460px;width:100%;}
+.card{background:white;border-radius:12px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,0.05);position:relative;}
+input{width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ddd;}
+button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;color:white;font-weight:600;}
+.value{display:flex;justify-content:space-between;margin:6px 0;}
+.copy{cursor:pointer;color:#888;}
+.copy:hover{color:black;}
+.menu{display:none;position:absolute;right:10px;top:45px;background:white;border:1px solid #ddd;border-radius:8px;padding:10px;}
+.gear{position:absolute;right:15px;top:15px;cursor:pointer;}
+.footer{text-align:center;font-size:12px;color:#888;margin-top:10px;}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:black;color:white;padding:10px;border-radius:8px;opacity:0;transition:.3s;}
+.toast.show{opacity:1;}
 </style>
-
 </head>
 <body>
 
 <div class="app">
-
 <div class="card">
+
+<div class="gear" onclick="toggleMenu()">⚙️</div>
+
+<div id="menu" class="menu">
+<label><input type="checkbox" id="showA"> A</label><br>
+<label><input type="checkbox" id="showB"> B</label>
+</div>
+
 <h2>HS Kalkulačka</h2>
 
-<label>HS kód</label>
-<input id="hs" list="hsList">
-<datalist id="hsList"></datalist>
-
-<label>Země</label>
-<input id="country" list="countryList">
-<datalist id="countryList"></datalist>
+<input id="hs" placeholder="HS kód">
+<input id="country" placeholder="Země">
 
 <button onclick="calculate()">Spočítat</button>
 
-<div id="result" class="result"></div>
+<div id="result"></div>
+
 </div>
 
 <div id="version" class="footer"></div>
-
 </div>
 
-<script src="app.js?v=4"></script>
+<div id="toast" class="toast">Zkopírováno</div>
+
+<script src="app.js?v=7"></script>
 </body>
 </html>
