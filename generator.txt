@@ -1,12 +1,35 @@
+PYTHON GENEROVÁNÍ JSON
 
-Python generování JSON:
+import pandas as pd, re, json
 
-- načti Excel
-- použij ffill na HS
-- vytvoř:
-  Nominal_2026 = sloupec F
-  Nominal_2027 = sloupec G
-  Nominal_2028 = sloupec H
-- benchmark rozděl na Source A/B
-- export do:
-  { version, data }
+df = pd.read_excel("kalkulacka.xlsx", header=None)
+
+def valid_hs(x):
+    return re.fullmatch(r"\d{6,10}", str(x).replace(" ","")) is not None
+
+def fmt(x):
+    try:
+        if pd.isna(x): return ""
+        x=str(x).strip()
+        if x in ["–","_","N/A"]: return ""
+        return f"{float(x):.3f}".rstrip('0').rstrip('.')
+    except:
+        return ""
+
+df[0] = df[0].ffill()
+
+data=[]
+for _,r in df.iterrows():
+    hs=str(r[0]).replace(" ","")
+    if not valid_hs(hs): continue
+
+    data.append({
+        "HS": hs,
+        "Country": "YOUR_SHEET",
+        "Nominal_2026": fmt(r[5]),
+        "Nominal_2027": fmt(r[6]),
+        "Nominal_2028": fmt(r[7]),
+        "ProdType": str(r[8]).strip() if pd.notna(r[8]) else ""
+    })
+
+json.dump({"version":"YYYY-MM-DD","data":data}, open("nominal.json","w"), indent=2)
