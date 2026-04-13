@@ -31,12 +31,7 @@ localStorage.setItem('year', document.getElementById('yearSelect').value);
 function loadSettings() {
 document.getElementById('showA').checked = localStorage.getItem('showA') !== 'false';
 document.getElementById('showB').checked = localStorage.getItem('showB') !== 'false';
-
-```
-const savedYear = localStorage.getItem('year') || "2026";
-document.getElementById('yearSelect').value = savedYear;
-```
-
+document.getElementById('yearSelect').value = localStorage.getItem('year') || "2026";
 }
 
 // ===== HELPERS =====
@@ -48,13 +43,16 @@ function normalizeProd(p) {
 return String(p || '').trim();
 }
 
+// bezpečné HTML
 function row(label, val) {
 if (!val) val = "-";
 
 ```
+const safeVal = String(val).replace(/'/g, "\\'");
+
 return '<div class="value">' +
     '<span>' + label + ': ' + val + '</span>' +
-    (val !== "-" ? '<span class="copy" onclick="copyToClipboard(\'' + val + '\')">📋</span>' : '') +
+    (val !== "-" ? '<span class="copy" onclick="copyToClipboard(\'' + safeVal + '\')">📋</span>' : '') +
     '</div>';
 ```
 
@@ -62,51 +60,48 @@ return '<div class="value">' +
 
 // ===== DATA LOAD =====
 async function loadData() {
+try {
 const n = await fetch('nominal.json').then(r => r.json());
 const b = await fetch('benchmark.json').then(r => r.json());
 
 ```
-nominal = n.data;
-benchmark = b.data;
+    nominal = n.data || [];
+    benchmark = b.data || [];
 
-document.getElementById('version').innerText = "Verze dat: " + n.version;
+    document.getElementById('version').innerText = "Verze dat: " + (n.version || "-");
 
-loadSettings();
+    loadSettings();
 
-// HS našeptávač
-const hsList = document.getElementById('hsList');
-hsList.innerHTML = "";
+    // ===== HS našeptávač =====
+    const hsList = document.getElementById('hsList');
+    hsList.innerHTML = "";
 
-const hsSet = new Set();
-nominal.forEach(x => hsSet.add(x.HS));
+    const hsSet = new Set();
+    nominal.forEach(x => hsSet.add(x.HS));
 
-hsSet.forEach(h => {
-    const o = document.createElement('option');
-    o.value = h;
-    hsList.appendChild(o);
-});
-```
+    hsSet.forEach(h => {
+        const o = document.createElement('option');
+        o.value = h;
+        hsList.appendChild(o);
+    });
 
+    // ===== ZEMĚ našeptávač =====
+    const countryList = document.getElementById('countryList');
+    countryList.innerHTML = "";
+
+    const countrySet = new Set();
+    nominal.forEach(x => countrySet.add(x.Country));
+
+    countrySet.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c;
+        countryList.appendChild(o);
+    });
+
+} catch (e) {
+    console.error(e);
+    document.getElementById('result').innerHTML = "Chyba načtení dat";
 }
-
-// ===== NAŠEPTÁVAČ ZEMÍ =====
-function updateCountryList() {
-const hs = normalizeHS(document.getElementById('hs').value);
-
-```
-const list = document.getElementById('countryList');
-list.innerHTML = "";
-
-const filtered = nominal.filter(x => x.HS === hs);
-
-const set = new Set();
-filtered.forEach(x => set.add(x.Country));
-
-set.forEach(c => {
-    const o = document.createElement('option');
-    o.value = c;
-    list.appendChild(o);
-});
 ```
 
 }
@@ -149,6 +144,7 @@ data.forEach(x => {
     const A = bm.find(b => b.Source === 'A');
     const B = bm.find(b => b.Source === 'B');
 
+    // ===== výběr roku =====
     let nominalValue = "";
 
     if (year === "2026") nominalValue = x.Nominal_2026;
@@ -187,8 +183,6 @@ saveSettings();
 calculate();
 }
 });
-
-document.getElementById('hs').addEventListener('input', updateCountryList);
 
 // ===== INIT =====
 loadData();
