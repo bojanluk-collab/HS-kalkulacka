@@ -1,113 +1,182 @@
-let nominal=[], benchmark=[];
+let nominal = [];
+let benchmark = [];
 
+// ===== MENU =====
 function toggleMenu(){
- const m=document.getElementById('menu');
- m.style.display=m.style.display==='block'?'none':'block';
+const m = document.getElementById('menu');
+m.style.display = m.style.display === 'block' ? 'none' : 'block';
 }
 
+// ===== TOAST =====
 function showToast(){
- const t=document.getElementById('toast');
- t.classList.add('show');
- setTimeout(()=>t.classList.remove('show'),1000);
+const t = document.getElementById('toast');
+t.classList.add('show');
+setTimeout(() => t.classList.remove('show'), 1000);
 }
 
-function copyToClipboard(t){
- navigator.clipboard.writeText(t);
- showToast();
+function copyToClipboard(text){
+navigator.clipboard.writeText(text);
+showToast();
 }
 
+// ===== SETTINGS =====
 function saveSettings(){
- localStorage.setItem('showA',showA.checked);
- localStorage.setItem('showB',showB.checked);
- localStorage.setItem('year',yearSelect.value);
+localStorage.setItem('showA', document.getElementById('showA').checked);
+localStorage.setItem('showB', document.getElementById('showB').checked);
+localStorage.setItem('year', document.getElementById('yearSelect').value);
 }
 
 function loadSettings(){
- showA.checked = localStorage.getItem('showA') !== 'false';
- showB.checked = localStorage.getItem('showB') !== 'false';
- yearSelect.value = localStorage.getItem('year') || '2026';
+document.getElementById('showA').checked = localStorage.getItem('showA') !== 'false';
+document.getElementById('showB').checked = localStorage.getItem('showB') !== 'false';
+
+```
+const savedYear = localStorage.getItem('year') || "2026";
+document.getElementById('yearSelect').value = savedYear;
+```
+
 }
 
-document.addEventListener('change', e=>{
- if(['showA','showB','yearSelect'].includes(e.target.id)){
-   saveSettings();
-   calculate();
- }
+// ===== LISTENERS =====
+document.addEventListener('change', (e) => {
+if (['showA','showB','yearSelect'].includes(e.target.id)){
+saveSettings();
+calculate();
+}
 });
 
-function normalizeHS(h){return String(h).replace(/\s+/g,'').trim();}
-function normalizeProd(p){return String(p||'').trim();}
-
-function row(label,val){
- return `<div class="value">${label}: ${val}<span class="copy" onclick="copyToClipboard('${val}')">📋</span></div>`;
+// ===== HELPERS =====
+function normalizeHS(h){
+return String(h).replace(/\s+/g, '').trim();
 }
 
+function normalizeProd(p){
+return String(p || '').trim();
+}
+
+function row(label, val){
+return `        <div class="value">             <span>${label}: ${val || "-"}</span>
+            ${val ?`<span class="copy" onclick="copyToClipboard('${val}')">📋</span>`: ""}         </div>
+   `;
+}
+
+// ===== DATA LOAD =====
 async function loadData(){
- const n=await fetch('nominal.json').then(r=>r.json());
- const b=await fetch('benchmark.json').then(r=>r.json());
+const n = await fetch('nominal.json').then(r => r.json());
+const b = await fetch('benchmark.json').then(r => r.json());
 
- nominal=n.data;
- benchmark=b.data;
+```
+nominal = n.data;
+benchmark = b.data;
 
- document.getElementById('version').innerText="Verze dat: "+n.version;
+document.getElementById('version').innerText = "Verze dat: " + n.version;
 
- loadSettings();
+loadSettings();
 
- const hsList = document.getElementById('hsList');
- [...new Set(nominal.map(x=>x.HS))].forEach(h=>{
-   const o=document.createElement('option'); o.value=h; hsList.appendChild(o);
- });
+// HS našeptávač
+const hsList = document.getElementById('hsList');
+hsList.innerHTML = "";
+
+[...new Set(nominal.map(x => x.HS))].forEach(h => {
+    const o = document.createElement('option');
+    o.value = h;
+    hsList.appendChild(o);
+});
+```
+
 }
 
+// ===== DYNAMICKÝ NAŠEPTÁVAČ ZEMÍ =====
 document.getElementById('hs').addEventListener('input', function(){
- const hs=normalizeHS(this.value);
- const filtered=nominal.filter(x=>x.HS===hs);
 
- const list=document.getElementById('countryList');
- list.innerHTML='';
+```
+const hs = normalizeHS(this.value);
 
- [...new Set(filtered.map(x=>x.Country))].forEach(c=>{
-   const o=document.createElement('option'); o.value=c; list.appendChild(o);
- });
+const filtered = nominal.filter(x => x.HS === hs);
+
+const list = document.getElementById('countryList');
+list.innerHTML = "";
+
+[...new Set(filtered.map(x => x.Country))].forEach(c => {
+    const o = document.createElement('option');
+    o.value = c;
+    list.appendChild(o);
+});
+```
+
 });
 
+// ===== HLAVNÍ LOGIKA =====
 function calculate(){
- const hs=normalizeHS(hsInput.value);
- const country=countryInput.value.trim().toLowerCase();
 
- const data = country
-   ? nominal.filter(x=>x.HS===hs && x.Country.toLowerCase()===country)
-   : nominal.filter(x=>x.HS===hs);
+```
+const hsInput = document.getElementById('hs');
+const countryInput = document.getElementById('country');
 
- if(!data.length){result.innerHTML="Nenalezeno";return;}
+const hs = normalizeHS(hsInput.value);
+const country = countryInput.value.trim().toLowerCase();
 
- let html=`<b>HS:</b> ${hs}`;
+const showA = document.getElementById('showA').checked;
+const showB = document.getElementById('showB').checked;
 
- data.forEach(x=>{
-   const prod=normalizeProd(x.ProdType);
-   const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
+const year = document.getElementById('yearSelect').value;
 
-   const A=bm.find(b=>b.Source==='A');
-   const B=bm.find(b=>b.Source==='B');
+const data = country
+    ? nominal.filter(x => x.HS === hs && x.Country.toLowerCase() === country)
+    : nominal.filter(x => x.HS === hs);
 
-   const year=yearSelect.value;
-
-   let val='';
-   if(year==='2026') val=x.Nominal_2026;
-   if(year==='2027') val=x.Nominal_2027;
-   if(year==='2028') val=x.Nominal_2028;
-
-   html+=`<div><b>${x.Country}</b>`;
-   html+=row("Nominal",val);
-   html+=`Typ: ${prod}<br>`;
-
-   if(showA.checked && A) html+=row("Benchmark A",A.Benchmark);
-   if(showB.checked && B) html+=row("Benchmark B",B.Benchmark);
-
-   html+="</div>";
- });
-
- result.innerHTML=html;
+if (!data.length){
+    document.getElementById('result').innerHTML = "Nenalezeno";
+    return;
 }
 
+let html = `<b>HS:</b> ${hs}`;
+
+data.forEach(x => {
+
+    const prod = normalizeProd(x.ProdType);
+
+    const bm = benchmark.filter(b =>
+        b.HS === hs &&
+        normalizeProd(b.ProdType) === prod
+    );
+
+    const A = bm.find(b => b.Source === 'A');
+    const B = bm.find(b => b.Source === 'B');
+
+    // ===== NOMINAL PODLE ROKU =====
+    let nominalValue = "";
+
+    if (year === "2026") nominalValue = x.Nominal_2026;
+    if (year === "2027") nominalValue = x.Nominal_2027;
+    if (year === "2028") nominalValue = x.Nominal_2028;
+
+    html += `
+        <div class="section">
+            <b>${x.Country}</b>
+            ${row("Nominal", nominalValue)}
+            <div>Typ výroby: ${prod || "-"}</div>
+    `;
+
+    if (showA && A){
+        html += row("Benchmark A", A.Benchmark);
+    }
+
+    if (showB && B){
+        html += row("Benchmark B", B.Benchmark);
+    }
+
+    if (!showA && !showB){
+        html += `<div style="color:#888;font-size:13px;">Žádný benchmark není vybrán</div>`;
+    }
+
+    html += `</div>`;
+});
+
+document.getElementById('result').innerHTML = html;
+```
+
+}
+
+// ===== INIT =====
 loadData();
