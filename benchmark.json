@@ -879,49 +879,49 @@
     },
     {
       "HS": "72052100",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.46",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.298",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.659",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.647",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.328",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.315",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.852",
       "Source": "A"
     },
     {
       "HS": "72052100",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.82",
       "Source": "A"
     },
@@ -8325,13 +8325,13 @@
     },
     {
       "HS": "72241010",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72241010",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
@@ -8343,13 +8343,13 @@
     },
     {
       "HS": "72241010",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72241010",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
@@ -8361,13 +8361,13 @@
     },
     {
       "HS": "72241010",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72241010",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
@@ -8379,13 +8379,13 @@
     },
     {
       "HS": "72241010",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72241010",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -8421,13 +8421,13 @@
     },
     {
       "HS": "72241090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72241090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
@@ -8439,13 +8439,13 @@
     },
     {
       "HS": "72241090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72241090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
@@ -8457,13 +8457,13 @@
     },
     {
       "HS": "72241090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72241090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
@@ -8475,13 +8475,13 @@
     },
     {
       "HS": "72241090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72241090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -8517,13 +8517,13 @@
     },
     {
       "HS": "72249002",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249002",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -8535,13 +8535,13 @@
     },
     {
       "HS": "72249002",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249002",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -8553,13 +8553,13 @@
     },
     {
       "HS": "72249002",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249002",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -8571,13 +8571,13 @@
     },
     {
       "HS": "72249002",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249002",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -8613,13 +8613,13 @@
     },
     {
       "HS": "72249003",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249003",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -8631,13 +8631,13 @@
     },
     {
       "HS": "72249003",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249003",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -8649,13 +8649,13 @@
     },
     {
       "HS": "72249003",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249003",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -8667,13 +8667,13 @@
     },
     {
       "HS": "72249003",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249003",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -8709,13 +8709,13 @@
     },
     {
       "HS": "72249005",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249005",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -8727,13 +8727,13 @@
     },
     {
       "HS": "72249005",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249005",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -8745,13 +8745,13 @@
     },
     {
       "HS": "72249005",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249005",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -8763,13 +8763,13 @@
     },
     {
       "HS": "72249005",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249005",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -8805,13 +8805,13 @@
     },
     {
       "HS": "72249007",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249007",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -8823,13 +8823,13 @@
     },
     {
       "HS": "72249007",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249007",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -8841,13 +8841,13 @@
     },
     {
       "HS": "72249007",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249007",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -8859,13 +8859,13 @@
     },
     {
       "HS": "72249007",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249007",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -8901,13 +8901,13 @@
     },
     {
       "HS": "72249014",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249014",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -8919,13 +8919,13 @@
     },
     {
       "HS": "72249014",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249014",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -8937,13 +8937,13 @@
     },
     {
       "HS": "72249014",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249014",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -8955,13 +8955,13 @@
     },
     {
       "HS": "72249014",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249014",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -8997,13 +8997,13 @@
     },
     {
       "HS": "72249018",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72249018",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
@@ -9015,13 +9015,13 @@
     },
     {
       "HS": "72249018",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72249018",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
@@ -9033,13 +9033,13 @@
     },
     {
       "HS": "72249018",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72249018",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
@@ -9051,13 +9051,13 @@
     },
     {
       "HS": "72249018",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72249018",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -9093,13 +9093,13 @@
     },
     {
       "HS": "72249031",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249031",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -9111,13 +9111,13 @@
     },
     {
       "HS": "72249031",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249031",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -9129,13 +9129,13 @@
     },
     {
       "HS": "72249031",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249031",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -9147,13 +9147,13 @@
     },
     {
       "HS": "72249031",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249031",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9189,13 +9189,13 @@
     },
     {
       "HS": "72249038",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72249038",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
@@ -9207,13 +9207,13 @@
     },
     {
       "HS": "72249038",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72249038",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
@@ -9225,13 +9225,13 @@
     },
     {
       "HS": "72249038",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72249038",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
@@ -9243,13 +9243,13 @@
     },
     {
       "HS": "72249038",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72249038",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9285,13 +9285,13 @@
     },
     {
       "HS": "72249090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72249090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
@@ -9303,13 +9303,13 @@
     },
     {
       "HS": "72249090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72249090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
@@ -9321,13 +9321,13 @@
     },
     {
       "HS": "72249090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72249090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
@@ -9339,13 +9339,13 @@
     },
     {
       "HS": "72249090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72249090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -9507,49 +9507,49 @@
     },
     {
       "HS": "72253010",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72253010",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9603,49 +9603,49 @@
     },
     {
       "HS": "72253030",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72253030",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9699,49 +9699,49 @@
     },
     {
       "HS": "72253090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72253090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9795,49 +9795,49 @@
     },
     {
       "HS": "72254012",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72254012",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9891,49 +9891,49 @@
     },
     {
       "HS": "72254015",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72254015",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -9987,49 +9987,49 @@
     },
     {
       "HS": "72254040",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72254040",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -10083,49 +10083,49 @@
     },
     {
       "HS": "72254060",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72254060",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -10179,49 +10179,49 @@
     },
     {
       "HS": "72254090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72254090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -10275,49 +10275,49 @@
     },
     {
       "HS": "72255020",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.673",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.499",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.815",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.801",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.46",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.021",
       "Source": "A"
     },
     {
       "HS": "72255020",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.987",
       "Source": "A"
     },
@@ -10371,49 +10371,49 @@
     },
     {
       "HS": "72255080",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.673",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.499",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.815",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.801",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.46",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.021",
       "Source": "A"
     },
     {
       "HS": "72255080",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.987",
       "Source": "A"
     },
@@ -10467,49 +10467,49 @@
     },
     {
       "HS": "72259100",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.706",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.532",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.848",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.835",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.493",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.48",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.054",
       "Source": "A"
     },
     {
       "HS": "72259100",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.021",
       "Source": "A"
     },
@@ -10563,49 +10563,49 @@
     },
     {
       "HS": "72259200",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.706",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.532",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.848",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.835",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.493",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.48",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.054",
       "Source": "A"
     },
     {
       "HS": "72259200",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.021",
       "Source": "A"
     },
@@ -10659,49 +10659,49 @@
     },
     {
       "HS": "72259900",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.706",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.532",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.848",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.835",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.493",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.48",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.054",
       "Source": "A"
     },
     {
       "HS": "72259900",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.021",
       "Source": "A"
     },
@@ -10863,49 +10863,49 @@
     },
     {
       "HS": "72262000",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72262000",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -10959,49 +10959,49 @@
     },
     {
       "HS": "72269120",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72269120",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -11055,49 +11055,49 @@
     },
     {
       "HS": "72269191",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72269191",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -11151,49 +11151,49 @@
     },
     {
       "HS": "72269199",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "72269199",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -11247,49 +11247,49 @@
     },
     {
       "HS": "72269200",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.673",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.499",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.815",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.801",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.46",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.021",
       "Source": "A"
     },
     {
       "HS": "72269200",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.987",
       "Source": "A"
     },
@@ -11343,49 +11343,49 @@
     },
     {
       "HS": "72269910",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.706",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.532",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.848",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.835",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.493",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.48",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.054",
       "Source": "A"
     },
     {
       "HS": "72269910",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.021",
       "Source": "A"
     },
@@ -11439,49 +11439,49 @@
     },
     {
       "HS": "72269930",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.706",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.532",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.848",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.835",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.493",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.48",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.054",
       "Source": "A"
     },
     {
       "HS": "72269930",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.021",
       "Source": "A"
     },
@@ -11535,49 +11535,49 @@
     },
     {
       "HS": "72269970",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.706",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.532",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.848",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.835",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.493",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.48",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.054",
       "Source": "A"
     },
     {
       "HS": "72269970",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.021",
       "Source": "A"
     },
@@ -11631,49 +11631,49 @@
     },
     {
       "HS": "72271000",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72271000",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -11727,49 +11727,49 @@
     },
     {
       "HS": "72272000",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72272000",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -11895,49 +11895,49 @@
     },
     {
       "HS": "72279095",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72279095",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -11991,49 +11991,49 @@
     },
     {
       "HS": "72281020",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72281020",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12087,49 +12087,49 @@
     },
     {
       "HS": "72281050",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72281050",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -12183,49 +12183,49 @@
     },
     {
       "HS": "72281090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72281090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12279,49 +12279,49 @@
     },
     {
       "HS": "72282010",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72282010",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12375,49 +12375,49 @@
     },
     {
       "HS": "72282091",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72282091",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12471,49 +12471,49 @@
     },
     {
       "HS": "72282099",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72282099",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12567,49 +12567,49 @@
     },
     {
       "HS": "72283020",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72283020",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12735,49 +12735,49 @@
     },
     {
       "HS": "72283061",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72283061",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12831,49 +12831,49 @@
     },
     {
       "HS": "72283069",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72283069",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -12927,49 +12927,49 @@
     },
     {
       "HS": "72283070",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72283070",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13023,49 +13023,49 @@
     },
     {
       "HS": "72283089",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72283089",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13119,49 +13119,49 @@
     },
     {
       "HS": "72284010",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72284010",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -13215,49 +13215,49 @@
     },
     {
       "HS": "72284090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.807",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.64",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.982",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.969",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.64",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.628",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.18",
       "Source": "A"
     },
     {
       "HS": "72284090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "1.148",
       "Source": "A"
     },
@@ -13311,49 +13311,49 @@
     },
     {
       "HS": "72285020",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72285020",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13443,49 +13443,49 @@
     },
     {
       "HS": "72285061",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72285061",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13539,49 +13539,49 @@
     },
     {
       "HS": "72285069",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72285069",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13635,49 +13635,49 @@
     },
     {
       "HS": "72285080",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72285080",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13731,49 +13731,49 @@
     },
     {
       "HS": "72286020",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72286020",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13827,49 +13827,49 @@
     },
     {
       "HS": "72286080",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72286080",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -13923,49 +13923,49 @@
     },
     {
       "HS": "72287010",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72287010",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -14019,49 +14019,49 @@
     },
     {
       "HS": "72287090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72287090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -14115,49 +14115,49 @@
     },
     {
       "HS": "72288000",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72288000",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -14211,49 +14211,49 @@
     },
     {
       "HS": "72292000",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72292000",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -14307,49 +14307,49 @@
     },
     {
       "HS": "72299020",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72299020",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -14439,49 +14439,49 @@
     },
     {
       "HS": "72299090",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.613",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.446",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.788",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.775",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.433",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.986",
       "Source": "A"
     },
     {
       "HS": "72299090",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.954",
       "Source": "A"
     },
@@ -15591,49 +15591,49 @@
     },
     {
       "HS": "73045110",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.561",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.394",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.736",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.723",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.394",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.381",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.934",
       "Source": "A"
     },
     {
       "HS": "73045110",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.902",
       "Source": "A"
     },
@@ -15687,49 +15687,49 @@
     },
     {
       "HS": "73045181",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.561",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.394",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.736",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.723",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.394",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.381",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.934",
       "Source": "A"
     },
     {
       "HS": "73045181",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.902",
       "Source": "A"
     },
@@ -15783,49 +15783,49 @@
     },
     {
       "HS": "73045189",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.561",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.394",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.736",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.723",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.394",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.381",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.934",
       "Source": "A"
     },
     {
       "HS": "73045189",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.902",
       "Source": "A"
     },
@@ -15915,49 +15915,49 @@
     },
     {
       "HS": "73045982",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.561",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.394",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.736",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.723",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.394",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.381",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.934",
       "Source": "A"
     },
     {
       "HS": "73045982",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.902",
       "Source": "A"
     },
@@ -16011,49 +16011,49 @@
     },
     {
       "HS": "73045983",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.561",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.394",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.736",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.723",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.394",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.381",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.934",
       "Source": "A"
     },
     {
       "HS": "73045983",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.902",
       "Source": "A"
     },
@@ -16107,49 +16107,49 @@
     },
     {
       "HS": "73045989",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.561",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.394",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.736",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.723",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.394",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.381",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.934",
       "Source": "A"
     },
     {
       "HS": "73045989",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.902",
       "Source": "A"
     },
@@ -16911,49 +16911,49 @@
     },
     {
       "HS": "73065021",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.673",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.499",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.815",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.801",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.46",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.021",
       "Source": "A"
     },
     {
       "HS": "73065021",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.987",
       "Source": "A"
     },
@@ -17007,49 +17007,49 @@
     },
     {
       "HS": "73065029",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.577",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.409",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.752",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.739",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.41",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.397",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "0.95",
       "Source": "A"
     },
     {
       "HS": "73065029",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.918",
       "Source": "A"
     },
@@ -17103,49 +17103,49 @@
     },
     {
       "HS": "73065080",
-      "ProdType": "F1",
+      "ProdType": "F)(1",
       "Benchmark": "1.673",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "F2",
+      "ProdType": "F)(2",
       "Benchmark": "1.499",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "G1",
+      "ProdType": "G)(1",
       "Benchmark": "0.815",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "G2",
+      "ProdType": "G)(2",
       "Benchmark": "0.801",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "H1",
+      "ProdType": "H)(1",
       "Benchmark": "0.46",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "H2",
+      "ProdType": "H)(2",
       "Benchmark": "0.446",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "J1",
+      "ProdType": "J)(1",
       "Benchmark": "1.021",
       "Source": "A"
     },
     {
       "HS": "73065080",
-      "ProdType": "J2",
+      "ProdType": "J)(2",
       "Benchmark": "0.987",
       "Source": "A"
     },

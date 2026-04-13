@@ -5,61 +5,42 @@
 <title>HS Kalkulačka</title>
 
 <style>
-*{box-sizing:border-box;}
-body{font-family:system-ui;background:#f5f7fb;display:flex;justify-content:center;padding:40px;margin:0;}
-.app{max-width:460px;width:100%;}
-.card{background:white;border-radius:12px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,0.05);position:relative;}
+* { box-sizing: border-box; }
+body { font-family: system-ui; background:#f5f7fb; display:flex; justify-content:center; padding:40px; margin:0; }
+.app { max-width:460px; width:100%; }
+.card { background:white; border-radius:12px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.05); position:relative; }
 
-input{width:100%;padding:10px 12px;margin-bottom:15px;border-radius:8px;border:1px solid #ddd;}
-button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;color:white;font-weight:600;cursor:pointer;}
+input { width:100%; padding:10px 12px; margin-bottom:15px; border-radius:8px; border:1px solid #ddd; }
+button { width:100%; padding:12px; border:none; border-radius:8px; background:#3b82f6; color:white; font-weight:600; cursor:pointer; }
 
-.value{display:flex;justify-content:space-between;margin:6px 0;}
-.copy{cursor:pointer;color:#888;}
-.copy:hover{color:black;}
+.value { display:flex; justify-content:space-between; margin:6px 0; }
+.copy { cursor:pointer; color:#888; }
 
-.gear{position:absolute;right:15px;top:15px;cursor:pointer;}
+.gear { position:absolute; right:15px; top:15px; cursor:pointer; }
 
 .menu {
-    display: none;
-    position: absolute;
-    right: 10px;
-    top: 45px;
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 8px;
-    min-width: 180px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    display:none;
+    position:absolute;
+    right:10px;
+    top:45px;
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:8px;
+    min-width:200px;
 }
 
 .menu-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 14px;
-    white-space: nowrap; /* 🔥 zabrání zalamování */
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px;
+    white-space:nowrap;
 }
 
-.menu-row input {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
+.footer { text-align:center; font-size:12px; color:#888; margin-top:10px; }
 
-.menu-row span {
-    flex: 1;
-}
-
-.menu-row:hover {
-    background: #f3f4f6;
-}
-
-.footer{text-align:center;font-size:12px;color:#888;margin-top:10px;}
-
-.toast{
+.toast {
     position:fixed;
     bottom:20px;
     left:50%;
@@ -71,10 +52,10 @@ button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;
     opacity:0;
     transition:.3s;
 }
-.toast.show{opacity:1;}
+.toast.show { opacity:1; }
 </style>
-
 </head>
+
 <body>
 
 <div class="app">
@@ -83,18 +64,27 @@ button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;
 <div class="gear" onclick="toggleMenu()">⚙️</div>
 
 <div id="menu" class="menu">
-    <label class="menu-row">
-        <input type="checkbox" id="showA">
-        <span>Benchmark A</span>
-    </label>
+<label class="menu-row">
+<input type="checkbox" id="showA"> <span>Benchmark A</span>
+</label>
 
-    <label class="menu-row">
-        <input type="checkbox" id="showB">
-        <span>Benchmark B</span>
-    </label>
+<label class="menu-row">
+<input type="checkbox" id="showB"> <span>Benchmark B</span>
+</label>
+
+<div style="border-top:1px solid #eee;margin:6px 0;"></div>
+
+<div class="menu-row">
+<span>Rok:</span>
+<select id="yearSelect">
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028+</option>
+</select>
+</div>
 </div>
 
-<h2>CJZ - CBAM Kalkulačka</h2>
+<h2>HS Kalkulačka</h2>
 
 <input id="hs" list="hsList" placeholder="HS kód">
 <datalist id="hsList"></datalist>
@@ -113,6 +103,6 @@ button{width:100%;padding:12px;border:none;border-radius:8px;background:#3b82f6;
 
 <div id="toast" class="toast">Zkopírováno</div>
 
-<script src="app.js?v=8"></script>
+<script src="app.js?v=final"></script>
 </body>
 </html>

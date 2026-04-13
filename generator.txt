@@ -1,42 +1,12 @@
 
-PYTHON GENEROVÁNÍ JSON
+Python generování JSON:
 
-import pandas as pd, re, json
-
-nom = pd.read_excel("kalkulacka.xlsx", sheet_name="Nominal_flat")
-bench = pd.read_excel("kalkulacka.xlsx", sheet_name="Benchmark_flat")
-
-# FIX merged cells
-nom['HS'] = nom['HS'].ffill()
-bench['HS'] = bench['HS'].ffill()
-
-def valid_hs(x):
-    return re.fullmatch(r"\d{6,10}", str(x).replace(" ","")) is not None
-
-nom = nom[nom['HS'].apply(valid_hs)]
-bench = bench[bench['HS'].apply(valid_hs)]
-
-# format hodnot
-def fmt(x):
-    return f"{float(x):.3f}".rstrip('0').rstrip('.') if pd.notna(x) else ""
-
-nom['Nominal'] = nom['Nominal'].apply(fmt)
-bench['Benchmark'] = bench['Benchmark'].apply(fmt)
-
-# A/B rozdělení
-rows=[]
-for (hs,prod),g in bench.groupby(['HS','ProdType']):
-    g=g.reset_index(drop=True)
-    for i,r in g.iterrows():
-        rows.append({
-            "HS":r['HS'],
-            "ProdType":r['ProdType'],
-            "Benchmark":r['Benchmark'],
-            "Source":"A" if i==0 else "B"
-        })
-
-bench_clean = rows
-
-# export
-json.dump({"version":"YYYY-MM-DD","data":nom.to_dict(orient='records')}, open("nominal.json","w"), indent=2)
-json.dump({"version":"YYYY-MM-DD","data":bench_clean}, open("benchmark.json","w"), indent=2)
+- načti Excel
+- použij ffill na HS
+- vytvoř:
+  Nominal_2026 = sloupec F
+  Nominal_2027 = sloupec G
+  Nominal_2028 = sloupec H
+- benchmark rozděl na Source A/B
+- export do:
+  { version, data }

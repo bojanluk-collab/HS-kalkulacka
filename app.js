@@ -17,17 +17,22 @@ function copyToClipboard(t){
 }
 
 function saveSettings(){
- localStorage.setItem('showA',document.getElementById('showA').checked);
- localStorage.setItem('showB',document.getElementById('showB').checked);
+ localStorage.setItem('showA',showA.checked);
+ localStorage.setItem('showB',showB.checked);
+ localStorage.setItem('year',yearSelect.value);
 }
 
 function loadSettings(){
- document.getElementById('showA').checked = localStorage.getItem('showA') !== 'false';
- document.getElementById('showB').checked = localStorage.getItem('showB') !== 'false';
+ showA.checked = localStorage.getItem('showA') !== 'false';
+ showB.checked = localStorage.getItem('showB') !== 'false';
+ yearSelect.value = localStorage.getItem('year') || '2026';
 }
 
 document.addEventListener('change', e=>{
- if(e.target.id==='showA'||e.target.id==='showB') saveSettings();
+ if(['showA','showB','yearSelect'].includes(e.target.id)){
+   saveSettings();
+   calculate();
+ }
 });
 
 function normalizeHS(h){return String(h).replace(/\s+/g,'').trim();}
@@ -48,50 +53,58 @@ async function loadData(){
 
  loadSettings();
 
- // našeptávač HS
  const hsList = document.getElementById('hsList');
- [...new Set(nominal.map(x => x.HS))].forEach(h => {
-     const o = document.createElement('option');
-     o.value = h;
-     hsList.appendChild(o);
- });
-
- // našeptávač zemí
- const countryList = document.getElementById('countryList');
- [...new Set(nominal.map(x => x.Country))].forEach(c => {
-     const o = document.createElement('option');
-     o.value = c;
-     countryList.appendChild(o);
+ [...new Set(nominal.map(x=>x.HS))].forEach(h=>{
+   const o=document.createElement('option'); o.value=h; hsList.appendChild(o);
  });
 }
 
-function calculate(){
- const hs=normalizeHS(document.getElementById('hs').value);
- const country=document.getElementById('country').value.trim().toLowerCase();
- const showA=document.getElementById('showA').checked;
- const showB=document.getElementById('showB').checked;
+document.getElementById('hs').addEventListener('input', function(){
+ const hs=normalizeHS(this.value);
+ const filtered=nominal.filter(x=>x.HS===hs);
 
- const data = country ? nominal.filter(x=>x.HS===hs && x.Country.toLowerCase()===country)
-                      : nominal.filter(x=>x.HS===hs);
+ const list=document.getElementById('countryList');
+ list.innerHTML='';
+
+ [...new Set(filtered.map(x=>x.Country))].forEach(c=>{
+   const o=document.createElement('option'); o.value=c; list.appendChild(o);
+ });
+});
+
+function calculate(){
+ const hs=normalizeHS(hsInput.value);
+ const country=countryInput.value.trim().toLowerCase();
+
+ const data = country
+   ? nominal.filter(x=>x.HS===hs && x.Country.toLowerCase()===country)
+   : nominal.filter(x=>x.HS===hs);
 
  if(!data.length){result.innerHTML="Nenalezeno";return;}
 
  let html=`<b>HS:</b> ${hs}`;
 
  data.forEach(x=>{
-  const prod=normalizeProd(x.ProdType);
-  const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
-  const A=bm.find(b=>b.Source==='A');
-  const B=bm.find(b=>b.Source==='B');
+   const prod=normalizeProd(x.ProdType);
+   const bm=benchmark.filter(b=>b.HS===hs && normalizeProd(b.ProdType)===prod);
 
-  html+=`<div class="section"><b>${x.Country}</b>`;
-  html+=row("Nominal",x.Nominal);
-  html+=`Typ: ${prod}<br>`;
+   const A=bm.find(b=>b.Source==='A');
+   const B=bm.find(b=>b.Source==='B');
 
-  if(showA && A) html+=row("Benchmark A",A.Benchmark);
-  if(showB && B) html+=row("Benchmark B",B.Benchmark);
+   const year=yearSelect.value;
 
-  html+="</div>";
+   let val='';
+   if(year==='2026') val=x.Nominal_2026;
+   if(year==='2027') val=x.Nominal_2027;
+   if(year==='2028') val=x.Nominal_2028;
+
+   html+=`<div><b>${x.Country}</b>`;
+   html+=row("Nominal",val);
+   html+=`Typ: ${prod}<br>`;
+
+   if(showA.checked && A) html+=row("Benchmark A",A.Benchmark);
+   if(showB.checked && B) html+=row("Benchmark B",B.Benchmark);
+
+   html+="</div>";
  });
 
  result.innerHTML=html;
