@@ -59,39 +59,39 @@ return '<div class="value">' +
 
 // ===== DATA LOAD =====
 async function loadData() {
+const n = await fetch('nominal.json').then(function(r){ return r.json(); });
+const b = await fetch('benchmark.json').then(function(r){ return r.json(); });
 
 ```
-const n = await fetch('nominal.json').then(r => r.json());
-const b = await fetch('benchmark.json').then(r => r.json());
-
 nominal = n.data || [];
 benchmark = b.data || [];
 
-document.getElementById('version').innerText = "Verze dat: " + (n.version || "-");
+const versionText = "Verze dat: " + (n.version || "-");
+document.getElementById('version').innerText = versionText;
 
 loadSettings();
 
-// HS našeptávač
+// ===== HS našeptávač =====
 const hsList = document.getElementById('hsList');
 hsList.innerHTML = "";
 
 const hsSet = new Set();
-nominal.forEach(x => hsSet.add(x.HS));
+nominal.forEach(function(x){ hsSet.add(x.HS); });
 
-hsSet.forEach(h => {
+hsSet.forEach(function(h){
     const o = document.createElement('option');
     o.value = h;
     hsList.appendChild(o);
 });
 
-// Země našeptávač
+// ===== ZEMĚ našeptávač =====
 const countryList = document.getElementById('countryList');
 countryList.innerHTML = "";
 
 const countrySet = new Set();
-nominal.forEach(x => countrySet.add(x.Country));
+nominal.forEach(function(x){ countrySet.add(x.Country); });
 
-countrySet.forEach(c => {
+countrySet.forEach(function(c){
     const o = document.createElement('option');
     o.value = c;
     countryList.appendChild(o);
@@ -102,11 +102,10 @@ countrySet.forEach(c => {
 
 // ===== HLAVNÍ LOGIKA =====
 function calculate() {
-
-```
 const hs = normalizeHS(document.getElementById('hs').value);
 const country = document.getElementById('country').value.trim().toLowerCase();
 
+```
 const showA = document.getElementById('showA').checked;
 const showB = document.getElementById('showB').checked;
 const year = document.getElementById('yearSelect').value;
@@ -114,9 +113,13 @@ const year = document.getElementById('yearSelect').value;
 let data;
 
 if (country) {
-    data = nominal.filter(x => x.HS === hs && x.Country.toLowerCase() === country);
+    data = nominal.filter(function(x){
+        return x.HS === hs && x.Country.toLowerCase() === country;
+    });
 } else {
-    data = nominal.filter(x => x.HS === hs);
+    data = nominal.filter(function(x){
+        return x.HS === hs;
+    });
 }
 
 if (!data.length) {
@@ -126,20 +129,17 @@ if (!data.length) {
 
 let html = "<b>HS:</b> " + hs;
 
-data.forEach(x => {
-
+data.forEach(function(x){
     const prod = normalizeProd(x.ProdType);
 
-    const bm = benchmark.filter(b =>
-        b.HS === hs &&
-        normalizeProd(b.ProdType) === prod
-    );
+    const bm = benchmark.filter(function(b){
+        return b.HS === hs && normalizeProd(b.ProdType) === prod;
+    });
 
-    const A = bm.find(b => b.Source === 'A');
-    const B = bm.find(b => b.Source === 'B');
+    const A = bm.find(function(b){ return b.Source === 'A'; });
+    const B = bm.find(function(b){ return b.Source === 'B'; });
 
     let nominalValue = "";
-
     if (year === "2026") nominalValue = x.Nominal_2026;
     if (year === "2027") nominalValue = x.Nominal_2027;
     if (year === "2028") nominalValue = x.Nominal_2028;
@@ -161,7 +161,7 @@ document.getElementById('result').innerHTML = html;
 }
 
 // ===== LISTENERS =====
-document.addEventListener('change', function (e) {
+document.addEventListener('change', function(e){
 if (e.target.id === 'showA' || e.target.id === 'showB' || e.target.id === 'yearSelect') {
 saveSettings();
 calculate();
