@@ -2,31 +2,33 @@ let nominal = [];
 let benchmark = [];
 
 // ===== MENU =====
-function toggleMenu(){
+function toggleMenu() {
 const m = document.getElementById('menu');
 m.style.display = m.style.display === 'block' ? 'none' : 'block';
 }
 
 // ===== TOAST =====
-function showToast(){
+function showToast() {
 const t = document.getElementById('toast');
 t.classList.add('show');
-setTimeout(() => t.classList.remove('show'), 1000);
+setTimeout(function () {
+t.classList.remove('show');
+}, 1000);
 }
 
-function copyToClipboard(text){
+function copyToClipboard(text) {
 navigator.clipboard.writeText(text);
 showToast();
 }
 
 // ===== SETTINGS =====
-function saveSettings(){
+function saveSettings() {
 localStorage.setItem('showA', document.getElementById('showA').checked);
 localStorage.setItem('showB', document.getElementById('showB').checked);
 localStorage.setItem('year', document.getElementById('yearSelect').value);
 }
 
-function loadSettings(){
+function loadSettings() {
 document.getElementById('showA').checked = localStorage.getItem('showA') !== 'false';
 document.getElementById('showB').checked = localStorage.getItem('showB') !== 'false';
 
@@ -37,31 +39,29 @@ document.getElementById('yearSelect').value = savedYear;
 
 }
 
-// ===== LISTENERS =====
-document.addEventListener('change', (e) => {
-if (['showA','showB','yearSelect'].includes(e.target.id)){
-saveSettings();
-calculate();
-}
-});
-
 // ===== HELPERS =====
-function normalizeHS(h){
+function normalizeHS(h) {
 return String(h).replace(/\s+/g, '').trim();
 }
 
-function normalizeProd(p){
+function normalizeProd(p) {
 return String(p || '').trim();
 }
 
-function row(label, val){
-return `        <div class="value">             <span>${label}: ${val || "-"}</span>
-            ${val ?`<span class="copy" onclick="copyToClipboard('${val}')">📋</span>`: ""}         </div>
-   `;
+function row(label, val) {
+if (!val) val = "-";
+
+```
+return '<div class="value">' +
+    '<span>' + label + ': ' + val + '</span>' +
+    (val !== "-" ? '<span class="copy" onclick="copyToClipboard(\'' + val + '\')">📋</span>' : '') +
+    '</div>';
+```
+
 }
 
 // ===== DATA LOAD =====
-async function loadData(){
+async function loadData() {
 const n = await fetch('nominal.json').then(r => r.json());
 const b = await fetch('benchmark.json').then(r => r.json());
 
@@ -77,7 +77,10 @@ loadSettings();
 const hsList = document.getElementById('hsList');
 hsList.innerHTML = "";
 
-[...new Set(nominal.map(x => x.HS))].forEach(h => {
+const hsSet = new Set();
+nominal.forEach(x => hsSet.add(x.HS));
+
+hsSet.forEach(h => {
     const o = document.createElement('option');
     o.value = h;
     hsList.appendChild(o);
@@ -86,51 +89,53 @@ hsList.innerHTML = "";
 
 }
 
-// ===== DYNAMICKÝ NAŠEPTÁVAČ ZEMÍ =====
-document.getElementById('hs').addEventListener('input', function(){
+// ===== NAŠEPTÁVAČ ZEMÍ =====
+function updateCountryList() {
+const hs = normalizeHS(document.getElementById('hs').value);
 
 ```
-const hs = normalizeHS(this.value);
-
-const filtered = nominal.filter(x => x.HS === hs);
-
 const list = document.getElementById('countryList');
 list.innerHTML = "";
 
-[...new Set(filtered.map(x => x.Country))].forEach(c => {
+const filtered = nominal.filter(x => x.HS === hs);
+
+const set = new Set();
+filtered.forEach(x => set.add(x.Country));
+
+set.forEach(c => {
     const o = document.createElement('option');
     o.value = c;
     list.appendChild(o);
 });
 ```
 
-});
+}
 
 // ===== HLAVNÍ LOGIKA =====
-function calculate(){
+function calculate() {
 
 ```
-const hsInput = document.getElementById('hs');
-const countryInput = document.getElementById('country');
-
-const hs = normalizeHS(hsInput.value);
-const country = countryInput.value.trim().toLowerCase();
+const hs = normalizeHS(document.getElementById('hs').value);
+const country = document.getElementById('country').value.trim().toLowerCase();
 
 const showA = document.getElementById('showA').checked;
 const showB = document.getElementById('showB').checked;
-
 const year = document.getElementById('yearSelect').value;
 
-const data = country
-    ? nominal.filter(x => x.HS === hs && x.Country.toLowerCase() === country)
-    : nominal.filter(x => x.HS === hs);
+let data;
 
-if (!data.length){
+if (country) {
+    data = nominal.filter(x => x.HS === hs && x.Country.toLowerCase() === country);
+} else {
+    data = nominal.filter(x => x.HS === hs);
+}
+
+if (!data.length) {
     document.getElementById('result').innerHTML = "Nenalezeno";
     return;
 }
 
-let html = `<b>HS:</b> ${hs}`;
+let html = "<b>HS:</b> " + hs;
 
 data.forEach(x => {
 
@@ -144,39 +149,46 @@ data.forEach(x => {
     const A = bm.find(b => b.Source === 'A');
     const B = bm.find(b => b.Source === 'B');
 
-    // ===== NOMINAL PODLE ROKU =====
     let nominalValue = "";
 
     if (year === "2026") nominalValue = x.Nominal_2026;
     if (year === "2027") nominalValue = x.Nominal_2027;
     if (year === "2028") nominalValue = x.Nominal_2028;
 
-    html += `
-        <div class="section">
-            <b>${x.Country}</b>
-            ${row("Nominal", nominalValue)}
-            <div>Typ výroby: ${prod || "-"}</div>
-    `;
+    html += '<div class="section">';
+    html += '<b>' + x.Country + '</b>';
+    html += row("Nominal", nominalValue);
+    html += '<div>Typ výroby: ' + (prod || "-") + '</div>';
 
-    if (showA && A){
+    if (showA && A) {
         html += row("Benchmark A", A.Benchmark);
     }
 
-    if (showB && B){
+    if (showB && B) {
         html += row("Benchmark B", B.Benchmark);
     }
 
-    if (!showA && !showB){
-        html += `<div style="color:#888;font-size:13px;">Žádný benchmark není vybrán</div>`;
+    if (!showA && !showB) {
+        html += '<div style="color:#888;font-size:13px;">Žádný benchmark není vybrán</div>';
     }
 
-    html += `</div>`;
+    html += '</div>';
 });
 
 document.getElementById('result').innerHTML = html;
 ```
 
 }
+
+// ===== LISTENERS =====
+document.addEventListener('change', function (e) {
+if (e.target.id === 'showA' || e.target.id === 'showB' || e.target.id === 'yearSelect') {
+saveSettings();
+calculate();
+}
+});
+
+document.getElementById('hs').addEventListener('input', updateCountryList);
 
 // ===== INIT =====
 loadData();
