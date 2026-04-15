@@ -15,7 +15,7 @@ function row(label, val){
 
 function renderDescription(text){
   if(!text) return "";
-  return `<div class="desc-wrapper"><div class="desc">${text}</div><span class="more" onclick="this.previousElementSibling.classList.toggle('open');this.style.display='none'">… více</span></div>`;
+  return `<div class="desc-wrapper"><div class="desc">${text}</div><span class="more" onclick="this.parentElement.querySelector('.desc').classList.toggle('open');this.style.display='none'">… více</span></div>`;
 }
 
 async function loadData(){
@@ -85,10 +85,9 @@ function calculate(){
 
     html += `<div class="section">`;
     html += `<b>${x.Country}</b>`;
-    if(x.ProdType) html += ` <span class="prodtype">Typ: ${x.ProdType}</span>`;
     html += `<div><b>Popis:</b></div>` + renderDescription(x.Description);
     html += row("Nominální hodnota", nomVal);
-    if(x.ProdType) html += row("Typ výroby", x.ProdType);
+    html += row("Typ výroby", x.ProdType || "-");
 
     if(showA && bmA !== null) html += row("Benchmark A", bmA);
     if(showB && bmB !== null) html += row("Benchmark B", bmB);
