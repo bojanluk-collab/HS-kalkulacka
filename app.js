@@ -147,6 +147,7 @@ data.forEach(function(x){
     html += '<div class="section">';
     html += '<b>' + x.Country + '</b>';
     html += row("Nominal", nominalValue);
+    html += '<div style="font-size:13px;color:#666;">' + x.Description + '</div>';
     html += '<div>Typ výroby: ' + (prod || "-") + '</div>';
 
     if (showA && A) html += row("Benchmark A", A.Benchmark);
