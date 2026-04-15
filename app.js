@@ -114,7 +114,15 @@ function calculate() {
 
         html += '<div class="section">';
         html += '<b>' + x.Country + '</b>';
-        html += renderDescription(x.Description);
+       html += `
+    <div class="desc-wrapper">
+        <div class="desc-label">Description:</div>
+        <div class="desc" title="${x.Description || ''}" onclick="this.classList.toggle('open')">
+            ${x.Description || ''}
+        </div>
+        <span class="more">… více</span>
+    </div>
+`;
         html += row("Nominal", x.Nominal_2026);
         html += '<div>Typ výroby: ' + (prod || "-") + '</div>';
 
