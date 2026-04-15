@@ -18,18 +18,18 @@ display:none;
 position:absolute;
 top:30px;
 right:0;
-width:270px; /* 🔥 širší */
+width:270px;
 background:#fff;
 padding:15px;
 border-radius:10px;
 box-shadow:0 6px 16px rgba(0,0,0,0.15);
 z-index:10;
+text-align:left; /* 🔥 FIX zarovnání */
 }
 
 .menu-section{margin-bottom:12px;}
 .menu-title{font-size:13px;color:#666;margin-bottom:6px;}
 
-/* 🔥 zarovnání vlevo */
 .menu-item{
 display:flex;
 align-items:center;
@@ -40,8 +40,18 @@ margin-bottom:6px;
 margin-right:8px;
 }
 
-.menu select{
-width:100%;
+/* 🔥 rok na jeden řádek */
+.menu-row{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.menu-row select{
+width:auto;
+padding:4px 6px;
+border-radius:6px;
+border:1px solid #ccc;
 }
 
 input{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;box-sizing:border-box;}
@@ -92,12 +102,14 @@ background:#333;color:#fff;padding:10px;border-radius:8px;}
 </div>
 
 <div class="menu-section">
-<div class="menu-title">Nominal pro rok</div>
+<div class="menu-row">
+<span class="menu-title" style="margin:0;">Rok:</span>
 <select id="yearSelect">
 <option value="2026">2026</option>
 <option value="2027">2027</option>
 <option value="2028">2028+</option>
 </select>
+</div>
 </div>
 
 </div>
