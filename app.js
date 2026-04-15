@@ -63,6 +63,8 @@ function calculate(){
   const year = document.getElementById('yearSelect').value;
   const showA = document.getElementById('showA').checked;
   const showB = document.getElementById('showB').checked;
+  const alokace = parseFloat(document.getElementById('alokace').value) || 0.975;
+  const cenaPovolenky = parseFloat(document.getElementById('cenaPovolenky').value) || 80;
 
   if(!hs){
     document.getElementById('result').innerHTML = '<p class="error">Zadejte prosím HS kód.</p>';
@@ -88,6 +90,14 @@ function calculate(){
     const bmA = getBenchmark(hs, x.ProdType, "A");
     const bmB = getBenchmark(hs, x.ProdType, "B");
 
+    // Výpočet: (Nominální – (Benchmark B × Alokace)) × Cena povolenky
+    let vysledek = null;
+    const nomNum = parseFloat(nomVal);
+    const bmBNum = parseFloat(bmB);
+    if(!isNaN(nomNum) && !isNaN(bmBNum)){
+      vysledek = (nomNum - (bmBNum * alokace)) * cenaPovolenky;
+    }
+
     html += `<div class="section">`;
     html += `<div class="section-header">${x.Country}</div>`;
     html += `<div class="section-body">`;
@@ -96,6 +106,12 @@ function calculate(){
     html += row("Typ výroby", x.ProdType || "-");
     if(showA && bmA !== null) html += row("Benchmark A", bmA);
     if(showB && bmB !== null) html += row("Benchmark B", bmB);
+    if(vysledek !== null){
+      html += `<div class="result-row">
+        <span class="result-row-label">Výsledná částka / t</span>
+        <span class="result-row-val">${vysledek.toFixed(2)} EUR</span>
+      </div>`;
+    }
     html += `</div></div>`;
   });
 
@@ -104,7 +120,7 @@ function calculate(){
 }
 
 document.addEventListener('change', e => {
-  if(['showA','showB','yearSelect'].includes(e.target.id)) calculate();
+  if(['showA','showB','yearSelect','alokace','cenaPovolenky'].includes(e.target.id)) calculate();
 });
 
 loadData();
