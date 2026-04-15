@@ -2,18 +2,18 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CJZ - CBAM Kalkulačka</title>
 
 <style>
-body{font-family:Arial;background:#f5f6f8;margin:0;padding:10px 20px;}
-.container{max-width:480px;margin:0 auto;}
-.card{position:relative;background:#fff;padding:16px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-.title{font-size:20px;font-weight:bold;}
-.menu-btn{position:absolute;top:10px;right:10px;cursor:pointer;}
+body { font-family: Arial; background:#f5f6f8; margin:0; padding:10px 20px; }
+.container { max-width:480px; margin:0 auto; }
+.card { position:relative; background:#fff; padding:16px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+.title { font-size:20px; font-weight:bold; }
+.menu-btn { position:absolute; top:10px; right:10px; cursor:pointer; }
 
-.menu{
+.menu {
 display:none;
-text-align: left;
 position:absolute;
 top:35px;
 right:0;
@@ -23,44 +23,99 @@ padding:15px;
 border-radius:10px;
 box-shadow:0 6px 16px rgba(0,0,0,0.15);
 z-index:10;
+text-align:left;
 }
+
+/* FIX menu */
 .menu label {
-    display: inline-flex; 
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    cursor: pointer;
-}
-
-.menu label span {
-    display: inline;     
-    white-space: nowrap;  
-}
-
-.menu input[type="checkbox"] {
-    flex: 0 0 auto;
-}
-
-.menu-title{
-font-size:13px;
-color:#666;
+display:inline-flex;
+align-items:center;
+gap:8px;
 margin-bottom:8px;
+cursor:pointer;
+white-space:nowrap;
 }
 
-.menu-row{
+.menu-row {
 display:flex;
 align-items:center;
 gap:10px;
 margin-top:10px;
 }
 
-.menu-row select{
+.menu-row select {
 width:auto;
 padding:4px 6px;
 }
 
-input{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;box-sizing:border-box;}
-button{width:100%;padding:10px;border:none;border-radius:8px;background:#2b6ef2;color:#fff;font-weight:bold;margin-bottom:15px;}
+input {
+width:100%;
+padding:10px;
+margin-bottom:10px;
+border-radius:8px;
+border:1px solid #ddd;
+box-sizing:border-box;
+}
+
+button {
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+background:#2b6ef2;
+color:#fff;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.section {
+margin-top:15px;
+padding:12px;
+border-radius:10px;
+background:#fafafa;
+border:1px solid #eee;
+}
+
+.value {
+display:flex;
+justify-content:space-between;
+margin-top:5px;
+}
+
+.copy { cursor:pointer; }
+
+.desc-wrapper { position:relative; margin-bottom:8px; }
+.desc {
+font-size:13px; color:#666; line-height:1.4; cursor:pointer;
+display:-webkit-box;
+-webkit-line-clamp:2;
+-webkit-box-orient:vertical;
+overflow:hidden;
+}
+.desc.open { -webkit-line-clamp:unset; }
+.more {
+font-size:12px; color:#999;
+position:absolute; bottom:0; right:0;
+background:#fff; padding-left:4px;
+}
+.desc.open + .more { display:none; }
+
+#toast {
+visibility:hidden;
+opacity:0;
+transition:opacity .3s;
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#333;
+color:#fff;
+padding:10px;
+border-radius:8px;
+}
+#toast.show { visibility:visible; opacity:1; }
+
+.footer { margin-top:20px; text-align:center; font-size:12px; color:#888; }
 </style>
 </head>
 
@@ -72,18 +127,10 @@ button{width:100%;padding:10px;border:none;border-radius:8px;background:#2b6ef2;
 <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
 
 <div id="menu" class="menu">
+<div><b>Zobrazení</b></div>
 
-<div class="menu-title">Zobrazení</div>
-
-<label>
-<input type="checkbox" id="showA" checked>
-<span>Benchmark A</span>
-</label>
-
-<label>
-<input type="checkbox" id="showB" checked>
-<span>Benchmark B</span>
-</label>
+<label><input type="checkbox" id="showA" checked> Benchmark A</label>
+<label><input type="checkbox" id="showB" checked> Benchmark B</label>
 
 <div class="menu-row">
 <span>Rok:</span>
@@ -93,22 +140,25 @@ button{width:100%;padding:10px;border:none;border-radius:8px;background:#2b6ef2;
 <option value="2028">2028+</option>
 </select>
 </div>
+</div>
+
+<input id="hs" list="hsList" placeholder="HS kód">
+<datalist id="hsList"></datalist>
+
+<input id="country" list="countryList" placeholder="Země (volitelné)">
+<datalist id="countryList"></datalist>
+
+<button onclick="calculate()">Vyhledat</button>
+
+<div id="result"></div>
 
 </div>
 
-<input placeholder="HS kód">
-<input placeholder="Země (volitelné)">
-<button>Vyhledat</button>
-
-</div>
+<div class="footer" id="version"></div>
 </div>
 
-<script>
-function toggleMenu(){
-const m=document.getElementById('menu');
-m.style.display=m.style.display==='block'?'none':'block';
-}
-</script>
+<div id="toast">Zkopírováno</div>
 
+<script src="app.js"></script>
 </body>
 </html>
