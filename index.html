@@ -18,16 +18,23 @@ body {
     margin: 0 auto;
 }
 
+.card {
+    position: relative;
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* HEADER V KARTĚ */
+.card-header {
+    position: relative;
+    margin-bottom: 10px;
+}
+
 .title {
     font-size: 20px;
     font-weight: bold;
-    margin: 10px 0 15px 0;
-}
-
-/* 🔥 HEADER ROW */
-.header {
-    position: relative;
-    margin-bottom: 10px;
 }
 
 .menu-btn {
@@ -36,13 +43,6 @@ body {
     right: 0;
     cursor: pointer;
     font-size: 18px;
-}
-
-.card {
-    background: white;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .menu {
@@ -142,22 +142,22 @@ button {
 
 <div class="container">
 
-    <div class="header">
-        <div class="title">CJZ - CBAM Kalkulačka</div>
-        <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
-
-        <div id="menu" class="menu">
-            <label><input type="checkbox" id="showA" checked> Benchmark A</label><br>
-            <label><input type="checkbox" id="showB" checked> Benchmark B</label><br>
-            <select id="yearSelect">
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                <option value="2028">2028+</option>
-            </select>
-        </div>
-    </div>
-
     <div class="card">
+
+        <div class="card-header">
+            <div class="title">CJZ - CBAM Kalkulačka</div>
+            <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
+
+            <div id="menu" class="menu">
+                <label><input type="checkbox" id="showA" checked> Benchmark A</label><br>
+                <label><input type="checkbox" id="showB" checked> Benchmark B</label><br>
+                <select id="yearSelect">
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028+</option>
+                </select>
+            </div>
+        </div>
 
         <input id="hs" list="hsList" placeholder="HS kód">
         <datalist id="hsList"></datalist>

@@ -40,30 +40,18 @@ function normalizeProd(p) {
 function row(label, val) {
     if (!val) val = "-";
     const safeVal = String(val).replace(/'/g, "\\'");
-    return `
-        <div class="value">
-            <span><b>${label}:</b> ${val}</span>
-            ${val !== "-" ? `<span class="copy" onclick="copyToClipboard('${safeVal}')">📋</span>` : ''}
-        </div>
-    `;
+    return `<div class="value"><span><b>${label}:</b> ${val}</span>${val !== "-" ? `<span class="copy" onclick="copyToClipboard('${safeVal}')">📋</span>` : ''}</div>`;
 }
 
 function renderDescription(text) {
     if (!text) return "";
     const safe = text.replace(/"/g, '&quot;');
-    return `
-        <div class="desc-wrapper">
-            <div class="desc" title="${safe}" onclick="this.classList.toggle('open')">
-                ${text}
-            </div>
-            <span class="more">… více</span>
-        </div>
-    `;
+    return `<div class="desc-wrapper"><div class="desc" title="${safe}" onclick="this.classList.toggle('open')">${text}</div><span class="more">… více</span></div>`;
 }
 
 async function loadData() {
-    const n = await fetch('nominal.json?v=3').then(r => r.json());
-    const b = await fetch('benchmark.json?v=3').then(r => r.json());
+    const n = await fetch('nominal.json?v=4').then(r => r.json());
+    const b = await fetch('benchmark.json?v=4').then(r => r.json());
 
     nominal = n.data || [];
     benchmark = b.data || [];
@@ -71,9 +59,7 @@ async function loadData() {
     document.getElementById('version').innerText = "Verze dat: " + (n.version || "-");
 
     loadSettings();
-
     fillAutocomplete();
-    calculate(); // 🔥 důležité
 }
 
 function fillAutocomplete() {
@@ -101,6 +87,7 @@ function fillAutocomplete() {
 function calculate() {
     const hs = normalizeHS(document.getElementById('hs').value);
     const country = document.getElementById('country').value.trim().toLowerCase();
+    const year = document.getElementById('yearSelect').value;
 
     let data = country
         ? nominal.filter(x => x.HS === hs && x.Country.toLowerCase() === country)
@@ -124,13 +111,17 @@ function calculate() {
         const A = bm.find(b => b.Source === 'A');
         const B = bm.find(b => b.Source === 'B');
 
+        let nominalValue = x.Nominal_2026;
+        if (year === "2027") nominalValue = x.Nominal_2027;
+        if (year === "2028") nominalValue = x.Nominal_2028;
+
         html += '<div class="section">';
         html += '<b>' + x.Country + '</b>';
 
         html += '<div><b>Description:</b></div>';
         html += renderDescription(x.Description);
 
-        html += row("Nominal", x.Nominal_2026);
+        html += row("Nominal", nominalValue);
         html += row("Typ výroby", prod);
 
         if (document.getElementById('showA').checked && A) html += row("Benchmark A", A.Benchmark);
@@ -145,7 +136,7 @@ function calculate() {
 document.addEventListener('change', function (e) {
     if (['showA', 'showB', 'yearSelect'].includes(e.target.id)) {
         saveSettings();
-        calculate(); // 🔥 FIX – přepočet
+        calculate();
     }
 });
 
