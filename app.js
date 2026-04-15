@@ -41,17 +41,29 @@ function row(label, val) {
     if (!val) val = "-";
     const safeVal = String(val).replace(/'/g, "\\'");
     return `
-        <div class="value column">
-            <span><b>${label}:</b></span>
-            <span class="text">${val}</span>
+        <div class="value">
+            <span><b>${label}:</b> ${val}</span>
             ${val !== "-" ? `<span class="copy" onclick="copyToClipboard('${safeVal}')">📋</span>` : ''}
         </div>
     `;
 }
 
+function renderDescription(text) {
+    if (!text) return "";
+    const safe = text.replace(/"/g, '&quot;');
+    return `
+        <div class="desc-wrapper">
+            <div class="desc" title="${safe}" onclick="this.classList.toggle('open')">
+                ${text}
+            </div>
+            <span class="more">… více</span>
+        </div>
+    `;
+}
+
 async function loadData() {
-    const n = await fetch('nominal.json?v=1.5').then(r => r.json());
-    const b = await fetch('benchmark.json?v=1.5').then(r => r.json());
+    const n = await fetch('nominal.json?v=2').then(r => r.json());
+    const b = await fetch('benchmark.json?v=2').then(r => r.json());
 
     nominal = n.data || [];
     benchmark = b.data || [];
@@ -110,7 +122,9 @@ function calculate() {
         html += '<div class="section">';
         html += '<b>' + x.Country + '</b>';
 
-        html += row("Description", x.Description);
+        html += '<div><b>Description:</b></div>';
+        html += renderDescription(x.Description);
+
         html += row("Nominal", x.Nominal_2026);
         html += row("Typ výroby", prod);
 
