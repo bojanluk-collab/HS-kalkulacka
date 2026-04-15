@@ -14,16 +14,17 @@ body {
 }
 
 .container {
-    max-width: 520px;
+    max-width: 480px;   /* užší = víc na výšku */
     margin: auto;
 }
+
 .card {
-    position: relative;   
+    position: relative;   /* 🔥 nutné */
     background: white;
     padding: 16px;
     border-radius: 12px;
-}
-
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}menu
 input {
     width: 100%;
     padding: 10px;
@@ -100,11 +101,11 @@ button {
 }
 
 .menu-btn {
-    position: absolute;   /* místo fixed */
-    top: 12px;
-    right: 12px;
+    position: absolute;   /* 🔥 NE fixed */
+    top: 10px;
+    right: 10px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 30px;
 }
 
 .menu {
@@ -121,7 +122,17 @@ button {
     color: #999;
     margin-bottom: 2px;
 }
+.value.column {
+    display: block;
+    margin-top: 6px;
+}
 
+.value.column .text {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-top: 2px;
+}
 #toast {
     visibility: hidden;
     position: fixed;
@@ -149,7 +160,8 @@ button {
 
 <body>
 
-<div class="menu-btn" onclick="toggleMenu()">⚙️</div>
+<div class="card">
+    <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
 
 <div id="menu" class="menu">
 <label><input type="checkbox" id="showA" checked> Benchmark A</label><br>
