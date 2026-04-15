@@ -24,17 +24,23 @@ box-shadow:0 6px 16px rgba(0,0,0,0.15);
 z-index:10;
 }
 
-/* DEFINITIVNÍ FIX */
-.menu label{
-display:flex;
-align-items:center;
-gap:8px;
-margin-bottom:8px;
-cursor:pointer;
+.menu label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+
+    width: auto;          /* 🔥 důležité */
 }
 
-.menu input[type="checkbox"]{
-flex:0 0 auto;
+.menu label span {
+    display: inline;      /* 🔥 důležité */
+    white-space: nowrap;  /* 🔥 zabrání zalomení */
+}
+
+.menu input[type="checkbox"] {
+    flex: 0 0 auto;
 }
 
 .menu-title{
