@@ -64,16 +64,48 @@ body {
   overflow: hidden;
 }
 
-.settings-bar {
+.card-topbar {
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 16px 0;
+}
+
+.settings-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mid);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--light);
+  user-select: none;
+  transition: border-color .15s, color .15s;
+}
+
+.settings-btn:hover { border-color: var(--orange); color: var(--orange); }
+.settings-btn svg { width: 13px; height: 13px; }
+
+.settings-bar {
+  display: none;
   align-items: center;
   justify-content: space-between;
   padding: 11px 20px;
   background: var(--light);
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  margin-top: 10px;
   gap: 12px;
   flex-wrap: wrap;
 }
+
+.settings-bar.open { display: flex; }
 
 .settings-group { display: flex; align-items: center; gap: 10px; }
 
@@ -279,12 +311,22 @@ body {
 
   <div class="card">
 
-    <div class="settings-bar">
+    <div class="card-topbar">
+      <div class="settings-btn" id="settingsBtn" onclick="toggleSettings()">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="8" cy="8" r="2.5"/>
+          <path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.41 1.41M11.54 11.54l1.41 1.41M3.05 12.95l1.41-1.41M11.54 4.46l1.41-1.41"/>
+        </svg>
+        Nastavení
+      </div>
+    </div>
+
+    <div class="settings-bar" id="settingsBar">
       <div class="settings-group">
         <span class="settings-label">Zobrazit</span>
         <div class="toggle-group">
-          <label class="toggle active" id="toggleA">
-            <input type="checkbox" id="showA" checked> Benchmark A
+          <label class="toggle" id="toggleA">
+            <input type="checkbox" id="showA"> Benchmark A
           </label>
           <label class="toggle active" id="toggleB">
             <input type="checkbox" id="showB" checked> Benchmark B
@@ -327,6 +369,20 @@ body {
 <script src="app.js"></script>
 
 <script>
+  function toggleSettings(){
+    const bar = document.getElementById('settingsBar');
+    bar.classList.toggle('open');
+  }
+
+  // Close settings when clicking outside
+  document.addEventListener('click', e => {
+    const bar = document.getElementById('settingsBar');
+    const btn = document.getElementById('settingsBtn');
+    if(bar.classList.contains('open') && !bar.contains(e.target) && !btn.contains(e.target)){
+      bar.classList.remove('open');
+    }
+  });
+
   ['showA','showB'].forEach(id => {
     const cb = document.getElementById(id);
     const lbl = document.getElementById('toggle' + id.slice(-1));
