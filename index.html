@@ -6,223 +6,119 @@
 <title>CJZ - CBAM Kalkulačka</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f6f8;
-    margin: 0;
-    padding: 10px 20px 20px 20px;
+body{font-family:Arial;background:#f5f6f8;margin:0;padding:10px 20px;}
+.container{max-width:480px;margin:0 auto;}
+.card{position:relative;background:#fff;padding:16px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.card-header{position:relative;margin-bottom:10px;}
+.title{font-size:20px;font-weight:bold;}
+.menu-btn{position:absolute;top:0;right:0;cursor:pointer;font-size:18px;}
+
+.menu{
+display:none;
+position:absolute;
+top:30px;
+right:0;
+width:220px;
+background:#fff;
+padding:15px;
+border-radius:10px;
+box-shadow:0 6px 16px rgba(0,0,0,0.15);
+z-index:10;
 }
 
-.container {
-    max-width: 480px;
-    margin: 0 auto;
+.menu-section{margin-bottom:12px;}
+.menu-title{font-size:13px;color:#666;margin-bottom:6px;}
+
+.menu-item{
+display:flex;
+align-items:center;
+margin-left:10px;
+margin-bottom:6px;
 }
 
-.card {
-    position: relative;
-    background: white;
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    overflow: hidden;
+.menu-item input{margin-right:6px;}
+
+.menu select{
+width:100%;
+margin-left:10px;
 }
 
-.card-header {
-    position: relative;
-    margin-bottom: 10px;
-}
+input{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;box-sizing:border-box;}
+button{width:100%;padding:10px;border:none;border-radius:8px;background:#2b6ef2;color:#fff;font-weight:bold;margin-bottom:15px;}
 
-.title {
-    font-size: 20px;
-    font-weight: bold;
-}
+.section{margin-top:15px;padding:12px;border-radius:10px;background:#fafafa;border:1px solid #eee;}
+.value{display:flex;justify-content:space-between;margin-top:5px;}
+.copy{cursor:pointer;}
 
-.menu-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    font-size: 18px;
-}
+.desc-wrapper{position:relative;margin-bottom:8px;}
+.desc{font-size:13px;color:#666;line-height:1.4;cursor:pointer;
+display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.desc.open{-webkit-line-clamp:unset;}
+.more{font-size:12px;color:#999;position:absolute;bottom:0;right:0;background:#fff;padding-left:4px;}
+.desc.open + .more{display:none;}
 
-/* MENU FIX */
-.menu {
-    display: none;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    width: 220px;
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    z-index: 10;
-}
+#toast{visibility:hidden;opacity:0;transition:opacity .3s;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+background:#333;color:#fff;padding:10px;border-radius:8px;}
+#toast.show{visibility:visible;opacity:1;}
 
-.menu label {
-    display: block;
-    margin-bottom: 6px;
-}
-
-.menu .group {
-    margin-top: 10px;
-}
-
-.menu .group-title {
-    font-size: 12px;
-    color: #666;
-    margin-bottom: 4px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    box-sizing: border-box; /* 🔥 FIX šířky */
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background: #2b6ef2;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-
-.section {
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 10px;
-    background: #fafafa;
-    border: 1px solid #eee;
-}
-
-.value {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
-}
-
-.copy {
-    cursor: pointer;
-}
-
-.desc-wrapper {
-    position: relative;
-    margin-bottom: 8px;
-}
-
-.desc {
-    font-size: 13px;
-    color: #666;
-    line-height: 1.4;
-    cursor: pointer;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.desc.open {
-    -webkit-line-clamp: unset;
-}
-
-.more {
-    font-size: 12px;
-    color: #999;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: white;
-    padding-left: 4px;
-}
-
-.desc.open + .more {
-    display: none;
-}
-
-/* TOAST FIX */
-#toast {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-#toast.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.footer {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 12px;
-    color: #888;
-}
+.footer{margin-top:20px;text-align:center;font-size:12px;color:#888;}
 </style>
 </head>
 
 <body>
-
 <div class="container">
+<div class="card">
 
-    <div class="card">
+<div class="card-header">
+<div class="title">CJZ - CBAM Kalkulačka</div>
+<div class="menu-btn" onclick="toggleMenu()">⚙️</div>
 
-        <div class="card-header">
-            <div class="title">CJZ - CBAM Kalkulačka</div>
-            <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
+<div id="menu" class="menu">
 
-            <div id="menu" class="menu">
-                <div class="group">
-                    <div class="group-title">Benchmark</div>
-                    <label><input type="checkbox" id="showA" checked> A</label>
-                    <label><input type="checkbox" id="showB" checked> B</label>
-                </div>
+<div class="menu-section">
+<div class="menu-title">Zobrazení</div>
 
-                <div class="group">
-                    <div class="group-title">Rok</div>
-                    <select id="yearSelect" style="width:100%">
-                        <option value="2026">2026</option>
-                        <option value="2027">2027</option>
-                        <option value="2028">2028+</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+<div class="menu-item">
+<input type="checkbox" id="showA" checked>
+<label>Benchmark A</label>
+</div>
 
-        <input id="hs" list="hsList" placeholder="HS kód">
-        <datalist id="hsList"></datalist>
+<div class="menu-item">
+<input type="checkbox" id="showB" checked>
+<label>Benchmark B</label>
+</div>
 
-        <input id="country" list="countryList" placeholder="Země (volitelné)">
-        <datalist id="countryList"></datalist>
+</div>
 
-        <button onclick="calculate()">Vyhledat</button>
+<div class="menu-section">
+<div class="menu-title">Nominal pro rok</div>
+<select id="yearSelect">
+<option value="2026">2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028+</option>
+</select>
+</div>
 
-        <div id="result"></div>
+</div>
+</div>
 
-    </div>
+<input id="hs" list="hsList" placeholder="HS kód">
+<datalist id="hsList"></datalist>
 
-    <div class="footer" id="version"></div>
+<input id="country" list="countryList" placeholder="Země (volitelné)">
+<datalist id="countryList"></datalist>
 
+<button onclick="calculate()">Vyhledat</button>
+
+<div id="result"></div>
+
+</div>
+
+<div class="footer" id="version"></div>
 </div>
 
 <div id="toast">Zkopírováno</div>
 
 <script src="app.js"></script>
-
 </body>
 </html>
