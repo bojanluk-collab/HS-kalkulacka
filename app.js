@@ -1,25 +1,20 @@
 let nominal = [];
 let benchmark = [];
 
-function toggleMenu(){
-  const m = document.getElementById('menu');
-  m.style.display = m.style.display === 'block' ? 'none' : 'block';
-}
-
 function normalizeHS(h){ return String(h).replace(/\s+/g,'').trim(); }
 
-function row(label, val){
+function row(label, val, accent){
   if(!val) val = "-";
-  return `<div class="value"><span><b>${label}:</b> ${val}</span></div>`;
+  return `<div class="row"><span class="row-label">${label}</span><span class="row-val${accent?' accent':''}">${val}</span></div>`;
 }
 
 function renderDescription(text){
   if(!text) return "";
-  return `<div class="desc-wrapper"><div class="desc">${text}</div></div>`;
+  return `<div class="desc-block"><div class="desc-block-label">Popis</div><div class="desc">${text}</div></div>`;
 }
 
 function attachMoreButtons(){
-  document.querySelectorAll('.desc-wrapper').forEach(wrapper => {
+  document.querySelectorAll('.desc-block').forEach(wrapper => {
     const desc = wrapper.querySelector('.desc');
     if(desc.scrollHeight > desc.clientHeight){
       const btn = document.createElement('span');
@@ -36,9 +31,7 @@ async function loadData(){
   const b = await fetch('benchmark.json').then(r => r.json());
   nominal = n.data || [];
   benchmark = b.data || [];
-
   document.getElementById('version').innerText = "Verze dat: " + (n.version || "-");
-
   fillAutocomplete();
 }
 
@@ -48,7 +41,6 @@ function fillAutocomplete(){
   [...new Set(nominal.map(x => x.HS))].forEach(h => {
     const o = document.createElement('option'); o.value = h; hsList.appendChild(o);
   });
-
   const cList = document.getElementById('countryList');
   cList.innerHTML = "";
   [...new Set(nominal.map(x => x.Country))].forEach(c => {
@@ -85,7 +77,7 @@ function calculate(){
     return;
   }
 
-  let html = `<b>HS:</b> ${hs}`;
+  let html = `<div class="result-hs">HS: ${hs}</div>`;
 
   data.forEach(x => {
     let nomVal = "";
@@ -97,15 +89,14 @@ function calculate(){
     const bmB = getBenchmark(hs, x.ProdType, "B");
 
     html += `<div class="section">`;
-    html += `<b>${x.Country}</b>`;
-    html += `<div><b>Popis:</b></div>` + renderDescription(x.Description);
-    html += row("Nominální hodnota", nomVal);
+    html += `<div class="section-header">${x.Country}</div>`;
+    html += `<div class="section-body">`;
+    html += renderDescription(x.Description);
+    html += row("Nominální hodnota", nomVal, true);
     html += row("Typ výroby", x.ProdType || "-");
-
     if(showA && bmA !== null) html += row("Benchmark A", bmA);
     if(showB && bmB !== null) html += row("Benchmark B", bmB);
-
-    html += `</div>`;
+    html += `</div></div>`;
   });
 
   document.getElementById('result').innerHTML = html;
