@@ -2,107 +2,62 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HS Kalkulačka</title>
-
 <style>
-* { box-sizing: border-box; }
-body { font-family: system-ui; background:#f5f7fb; display:flex; justify-content:center; padding:40px; margin:0; }
-.app { max-width:460px; width:100%; }
-.card { background:white; border-radius:12px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.05); position:relative; }
-
-input { width:100%; padding:10px 12px; margin-bottom:15px; border-radius:8px; border:1px solid #ddd; }
-button { width:100%; padding:12px; border:none; border-radius:8px; background:#3b82f6; color:white; font-weight:600; cursor:pointer; }
-
-.value { display:flex; justify-content:space-between; margin:6px 0; }
-.copy { cursor:pointer; color:#888; }
-
-.gear { position:absolute; right:15px; top:15px; cursor:pointer; }
-
-.menu {
-    display:none;
-    position:absolute;
-    right:10px;
-    top:45px;
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:12px;
-    padding:8px;
-    min-width:200px;
-}
-
-.menu-row {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:8px;
-    white-space:nowrap;
-}
-
-.footer { text-align:center; font-size:12px; color:#888; margin-top:10px; }
-
-.toast {
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:black;
-    color:white;
-    padding:10px 15px;
-    border-radius:8px;
-    opacity:0;
-    transition:.3s;
-}
-.toast.show { opacity:1; }
+body { font-family: Arial; background:#f5f6f8; padding:20px; margin:0;}
+.container { max-width:600px; margin:auto;}
+.card { background:white; padding:16px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+input { width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid #ddd;}
+button { width:100%; padding:10px; border:none; border-radius:8px; background:#2b6ef2; color:white; font-weight:bold; cursor:pointer;}
+.section { margin-top:15px; padding:12px; border-radius:10px; background:#fafafa; border:1px solid #eee;}
+.value { display:flex; justify-content:space-between; margin-top:5px;}
+.copy { cursor:pointer;}
+.desc-wrapper { position:relative; margin-bottom:8px;}
+.desc { font-size:13px; color:#666; line-height:1.4; cursor:pointer;
+display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+.desc.open { -webkit-line-clamp:unset;}
+.more { font-size:12px; color:#999; position:absolute; bottom:0; right:0; background:white; padding-left:4px;}
+.desc.open + .more { display:none;}
+.menu-btn { position:fixed; top:15px; right:15px; cursor:pointer;}
+.menu { display:none; position:fixed; top:50px; right:15px; background:white; padding:12px; border-radius:10px;}
+#toast { visibility:hidden; position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+background:#333; color:white; padding:10px; border-radius:8px;}
+#toast.show { visibility:visible;}
+.footer { margin-top:20px; text-align:center; font-size:12px; color:#888;}
 </style>
 </head>
-
 <body>
 
-<div class="app">
-<div class="card">
-
-<div class="gear" onclick="toggleMenu()">⚙️</div>
+<div class="menu-btn" onclick="toggleMenu()">⚙️</div>
 
 <div id="menu" class="menu">
-<label class="menu-row">
-<input type="checkbox" id="showA"> <span>Benchmark A</span>
-</label>
-
-<label class="menu-row">
-<input type="checkbox" id="showB"> <span>Benchmark B</span>
-</label>
-
-<div style="border-top:1px solid #eee;margin:6px 0;"></div>
-
-<div class="menu-row">
-<span>Rok:</span>
+<label><input type="checkbox" id="showA" checked> Benchmark A</label><br>
+<label><input type="checkbox" id="showB" checked> Benchmark B</label><br>
 <select id="yearSelect">
 <option value="2026">2026</option>
 <option value="2027">2027</option>
 <option value="2028">2028+</option>
 </select>
 </div>
-</div>
 
-<h2>CJZ - CBAM Kalkulačka</h2>
-
+<div class="container">
+<div class="card">
 <input id="hs" list="hsList" placeholder="HS kód">
 <datalist id="hsList"></datalist>
 
-<input id="country" list="countryList" placeholder="Země">
+<input id="country" list="countryList" placeholder="Země (volitelné)">
 <datalist id="countryList"></datalist>
 
-<button onclick="calculate()">Vyhledat ✔</button>
-
+<button onclick="calculate()">Vyhledat</button>
 <div id="result"></div>
-
 </div>
 
-<div id="version" class="footer"></div>
+<div class="footer" id="version"></div>
 </div>
 
-<div id="toast" class="toast">Zkopírováno</div>
+<div id="toast">Zkopírováno</div>
+<script src="app.js"></script>
 
-<script src="app.js?v=final"></script>
 </body>
 </html>
