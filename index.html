@@ -3,19 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HS Kalkulačka</title>
+<title>CJZ - CBAM Kalkulačka</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     background: #f5f6f8;
     margin: 0;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
 }
 
 .container {
     max-width: 480px;
-    margin: 40px auto;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 15px 0;
 }
 
 .card {
@@ -26,6 +32,25 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+.menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
 input {
     width: 100%;
     display: block;
@@ -33,15 +58,13 @@ input {
     margin-bottom: 10px;
     border-radius: 8px;
     border: 1px solid #ddd;
-    box-sizing: border-box;
 }
 
 button {
     width: 100%;
-    display: block;
     padding: 10px;
-    border: none;
     border-radius: 8px;
+    border: none;
     background: #2b6ef2;
     color: white;
     font-weight: bold;
@@ -103,40 +126,6 @@ button {
     display: none;
 }
 
-.menu-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    cursor: pointer;
-}
-
-.menu {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: white;
-    padding: 12px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-#toast {
-    visibility: hidden;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-#toast.show {
-    visibility: visible;
-}
-
 .footer {
     margin-top: 20px;
     text-align: center;
@@ -149,6 +138,9 @@ button {
 <body>
 
 <div class="container">
+
+    <div class="title">CJZ - CBAM Kalkulačka</div>
+
     <div class="card">
 
         <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
@@ -176,6 +168,7 @@ button {
     </div>
 
     <div class="footer" id="version"></div>
+
 </div>
 
 <div id="toast">Zkopírováno</div>

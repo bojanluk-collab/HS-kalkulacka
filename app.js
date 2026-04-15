@@ -62,8 +62,8 @@ function renderDescription(text) {
 }
 
 async function loadData() {
-    const n = await fetch('nominal.json?v=2').then(r => r.json());
-    const b = await fetch('benchmark.json?v=2').then(r => r.json());
+    const n = await fetch('nominal.json?v=3').then(r => r.json());
+    const b = await fetch('benchmark.json?v=3').then(r => r.json());
 
     nominal = n.data || [];
     benchmark = b.data || [];
@@ -72,6 +72,11 @@ async function loadData() {
 
     loadSettings();
 
+    fillAutocomplete();
+    calculate(); // 🔥 důležité
+}
+
+function fillAutocomplete() {
     const hsList = document.getElementById('hsList');
     hsList.innerHTML = "";
     const hsSet = new Set();
@@ -102,7 +107,7 @@ function calculate() {
         : nominal.filter(x => x.HS === hs);
 
     if (!data.length) {
-        document.getElementById('result').innerHTML = "Nenalezeno";
+        document.getElementById('result').innerHTML = "";
         return;
     }
 
@@ -128,8 +133,8 @@ function calculate() {
         html += row("Nominal", x.Nominal_2026);
         html += row("Typ výroby", prod);
 
-        if (A) html += row("Benchmark A", A.Benchmark);
-        if (B) html += row("Benchmark B", B.Benchmark);
+        if (document.getElementById('showA').checked && A) html += row("Benchmark A", A.Benchmark);
+        if (document.getElementById('showB').checked && B) html += row("Benchmark B", B.Benchmark);
 
         html += '</div>';
     });
@@ -140,7 +145,7 @@ function calculate() {
 document.addEventListener('change', function (e) {
     if (['showA', 'showB', 'yearSelect'].includes(e.target.id)) {
         saveSettings();
-        calculate();
+        calculate(); // 🔥 FIX – přepočet
     }
 });
 
