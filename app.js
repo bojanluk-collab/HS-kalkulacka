@@ -50,8 +50,8 @@ function renderDescription(text) {
 }
 
 async function loadData() {
-    const n = await fetch('nominal.json?v=4').then(r => r.json());
-    const b = await fetch('benchmark.json?v=4').then(r => r.json());
+    const n = await fetch('nominal.json?v=5').then(r => r.json());
+    const b = await fetch('benchmark.json?v=5').then(r => r.json());
 
     nominal = n.data || [];
     benchmark = b.data || [];

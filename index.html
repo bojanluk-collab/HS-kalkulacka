@@ -24,9 +24,9 @@ body {
     padding: 16px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
 }
 
-/* HEADER V KARTĚ */
 .card-header {
     position: relative;
     margin-bottom: 10px;
@@ -45,16 +45,33 @@ body {
     font-size: 18px;
 }
 
+/* MENU FIX */
 .menu {
     display: none;
     position: absolute;
-    top: 25px;
+    top: 30px;
     right: 0;
+    width: 220px;
     background: white;
     padding: 12px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     z-index: 10;
+}
+
+.menu label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.menu .group {
+    margin-top: 10px;
+}
+
+.menu .group-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
 }
 
 input {
@@ -63,6 +80,7 @@ input {
     margin-bottom: 10px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    box-sizing: border-box; /* 🔥 FIX šířky */
 }
 
 button {
@@ -129,6 +147,26 @@ button {
     display: none;
 }
 
+/* TOAST FIX */
+#toast {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
 .footer {
     margin-top: 20px;
     text-align: center;
@@ -149,13 +187,20 @@ button {
             <div class="menu-btn" onclick="toggleMenu()">⚙️</div>
 
             <div id="menu" class="menu">
-                <label><input type="checkbox" id="showA" checked> Benchmark A</label><br>
-                <label><input type="checkbox" id="showB" checked> Benchmark B</label><br>
-                <select id="yearSelect">
-                    <option value="2026">2026</option>
-                    <option value="2027">2027</option>
-                    <option value="2028">2028+</option>
-                </select>
+                <div class="group">
+                    <div class="group-title">Benchmark</div>
+                    <label><input type="checkbox" id="showA" checked> A</label>
+                    <label><input type="checkbox" id="showB" checked> B</label>
+                </div>
+
+                <div class="group">
+                    <div class="group-title">Rok</div>
+                    <select id="yearSelect" style="width:100%">
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028+</option>
+                    </select>
+                </div>
             </div>
         </div>
 
