@@ -15,7 +15,20 @@ function row(label, val){
 
 function renderDescription(text){
   if(!text) return "";
-  return `<div class="desc-wrapper"><div class="desc">${text}</div><span class="more" onclick="this.parentElement.querySelector('.desc').classList.toggle('open');this.style.display='none'">… více</span></div>`;
+  return `<div class="desc-wrapper"><div class="desc">${text}</div></div>`;
+}
+
+function attachMoreButtons(){
+  document.querySelectorAll('.desc-wrapper').forEach(wrapper => {
+    const desc = wrapper.querySelector('.desc');
+    if(desc.scrollHeight > desc.clientHeight){
+      const btn = document.createElement('span');
+      btn.className = 'more';
+      btn.textContent = '… více';
+      btn.onclick = () => { desc.classList.add('open'); btn.style.display='none'; };
+      wrapper.appendChild(btn);
+    }
+  });
 }
 
 async function loadData(){
@@ -96,6 +109,7 @@ function calculate(){
   });
 
   document.getElementById('result').innerHTML = html;
+  attachMoreButtons();
 }
 
 document.addEventListener('change', e => {
