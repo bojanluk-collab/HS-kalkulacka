@@ -48,13 +48,27 @@ function fillAutocomplete(){
   });
 }
 
-function getBenchmark(hs, prodType, source){
-  const match = benchmark.find(b =>
-    b.HS === hs &&
-    b.Source === source &&
-    (b.ProdType || "") === (prodType || "")
-  );
-  return match ? match.Benchmark : null;
+function getBenchmark(hs, prodType, source, year){
+  const yearSuffix = (year === "2028") ? "2" : "1";
+  const pool = benchmark.filter(b => b.HS === hs && b.Source === source);
+
+  // 1. Přesná shoda ProdType
+  let match = pool.find(b => (b.ProdType || "") === (prodType || ""));
+  if(match) return match.Benchmark;
+
+  // 2. Nominál má písmeno, benchmark má písmeno+číslo (F → F1 nebo F2)
+  if(prodType){
+    match = pool.find(b => b.ProdType === prodType + yearSuffix);
+    if(match) return match.Benchmark;
+  }
+
+  // 3. Nominál nemá ProdType, benchmark má jen číslo (1 nebo 2)
+  if(!prodType){
+    match = pool.find(b => b.ProdType === yearSuffix);
+    if(match) return match.Benchmark;
+  }
+
+  return null;
 }
 
 function calculate(){
@@ -87,8 +101,8 @@ function calculate(){
     else if(year === "2027") nomVal = x.Nominal_2027;
     else if(year === "2028") nomVal = x.Nominal_2028;
 
-    const bmA = getBenchmark(hs, x.ProdType, "A");
-    const bmB = getBenchmark(hs, x.ProdType, "B");
+    const bmA = getBenchmark(hs, x.ProdType, "A", year);
+    const bmB = getBenchmark(hs, x.ProdType, "B", year);
 
     // Výpočet: (Nominální – (Benchmark B × Alokace)) × Cena povolenky
     let vysledek = null;
