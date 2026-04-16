@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CJZ - Výpočet Ceny povolenky CBAM</title>
+<title>CJZ - CBAM Kalkulačka</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -358,6 +358,39 @@ body {
   margin-top: 20px;
   letter-spacing: 0.04em;
 }
+
+.loading-bar {
+  height: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.loading-bar-inner {
+  height: 100%;
+  width: 40%;
+  background: var(--orange);
+  border-radius: 2px;
+  animation: loading-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes loading-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+.loading-hint {
+  font-size: 12px;
+  color: var(--mid);
+  padding: 10px 20px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 </style>
 </head>
 
@@ -371,12 +404,17 @@ body {
 <div class="main">
 
   <div class="page-title">
-    <h1>Výpočet Ceny povolenky CBAM</h1>
+    <h1>Nominální hodnoty CBAM</h1>
     <p>Zadejte HS kód a volitelně filtrujte podle země původu</p>
   </div>
 
   <div class="card">
 
+    <div id="loadingBar" class="loading-bar"><div class="loading-bar-inner"></div></div>
+    <div id="loadingHint" class="loading-hint">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="var(--orange)" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+      Načítání dat…
+    </div>
     <div class="card-topbar">
       <div class="settings-btn" id="settingsBtn" onclick="toggleSettings()">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -431,7 +469,7 @@ body {
         <datalist id="countryList"></datalist>
       </div>
 
-      <button class="btn" onclick="calculate()">Vyhledat</button>
+      <button class="btn" id="searchBtn" onclick="calculate()" disabled>Vyhledat</button>
 
       <div class="results" id="result"></div>
     </div>

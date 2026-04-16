@@ -27,45 +27,53 @@ function attachMoreButtons(){
 }
 
 async function loadData(){
-  const n = await fetch('nominal.json').then(r => r.json());
-  const b = await fetch('benchmark.json').then(r => r.json());
+  const [n, b, ac] = await Promise.all([
+    fetch('nominal.json').then(r => r.json()),
+    fetch('benchmark.json').then(r => r.json()),
+    fetch('autocomplete.json').then(r => r.json())
+  ]);
   nominal = n.data || [];
   benchmark = b.data || [];
-  document.getElementById('version').innerText = "Verze dat: " + (n.version || "-");
-  fillAutocomplete();
+  document.getElementById('version').innerText = "Verze dat: " + (n.v || "-");
+  fillAutocomplete(ac);
+
+  // Skryj loading, aktivuj tlačítko
+  document.getElementById('loadingBar').style.display = 'none';
+  document.getElementById('loadingHint').style.display = 'none';
+  document.getElementById('searchBtn').disabled = false;
 }
 
-function fillAutocomplete(){
+function fillAutocomplete(ac){
   const hsList = document.getElementById('hsList');
   hsList.innerHTML = "";
-  [...new Set(nominal.map(x => x.HS))].forEach(h => {
+  (ac.hs || []).forEach(h => {
     const o = document.createElement('option'); o.value = h; hsList.appendChild(o);
   });
   const cList = document.getElementById('countryList');
   cList.innerHTML = "";
-  [...new Set(nominal.map(x => x.Country))].forEach(c => {
+  (ac.countries || []).forEach(c => {
     const o = document.createElement('option'); o.value = c; cList.appendChild(o);
   });
 }
 
 function getBenchmark(hs, prodType, source, year){
   const yearSuffix = (year === "2028") ? "2" : "1";
-  const pool = benchmark.filter(b => b.HS === hs && b.Source === source);
+  const pool = benchmark.filter(b => b.h === hs && b.s === source);
 
   // 1. Přesná shoda ProdType
-  let match = pool.find(b => (b.ProdType || "") === (prodType || ""));
-  if(match) return match.Benchmark;
+  let match = pool.find(b => (b.p || "") === (prodType || ""));
+  if(match) return match.b;
 
   // 2. Nominál má písmeno, benchmark má písmeno+číslo (F → F1 nebo F2)
   if(prodType){
-    match = pool.find(b => b.ProdType === prodType + yearSuffix);
-    if(match) return match.Benchmark;
+    match = pool.find(b => b.p === prodType + yearSuffix);
+    if(match) return match.b;
   }
 
   // 3. Nominál nemá ProdType, benchmark má jen číslo (1 nebo 2)
   if(!prodType){
-    match = pool.find(b => b.ProdType === yearSuffix);
-    if(match) return match.Benchmark;
+    match = pool.find(b => b.p === yearSuffix);
+    if(match) return match.b;
   }
 
   return null;
@@ -85,14 +93,14 @@ function calculate(){
     return;
   }
 
-  let data = nominal.filter(x => x.HS === hs);
+  let data = nominal.filter(x => x.h === hs);
   const allForHS = data;
-  if(country) data = data.filter(x => x.Country.toLowerCase() === country);
+  if(country) data = data.filter(x => x.c.toLowerCase() === country);
 
   // Pokud hledáme konkrétní zemi ale HS tam není, přidáme _Other Countries
   let otherData = [];
   if(country && data.length === 0){
-    otherData = allForHS.filter(x => x.Country === '_Other Countries and Territorie');
+    otherData = allForHS.filter(x => x.c === '_Other Countries and Territorie');
   }
 
   if(data.length === 0 && otherData.length === 0){
@@ -104,12 +112,12 @@ function calculate(){
 
   data.forEach(x => {
     let nomVal = "";
-    if(year === "2026") nomVal = x.Nominal_2026;
-    else if(year === "2027") nomVal = x.Nominal_2027;
-    else if(year === "2028") nomVal = x.Nominal_2028;
+    if(year === "2026") nomVal = x.n6;
+    else if(year === "2027") nomVal = x.n7;
+    else if(year === "2028") nomVal = x.n8;
 
-    const bmA = getBenchmark(hs, x.ProdType, "A", year);
-    const bmB = getBenchmark(hs, x.ProdType, "B", year);
+    const bmA = getBenchmark(hs, x.p, "A", year);
+    const bmB = getBenchmark(hs, x.p, "B", year);
 
     // Výpočet: (Nominální – (Benchmark B × Alokace)) × Cena povolenky
     let vysledek = null;
@@ -120,11 +128,11 @@ function calculate(){
     }
 
     html += `<div class="section">`;
-    html += `<div class="section-header">${x.Country}</div>`;
+    html += `<div class="section-header">${x.c}</div>`;
     html += `<div class="section-body">`;
-    html += renderDescription(x.Description);
+    html += renderDescription(x.d);
     html += row("Nominální hodnota", nomVal, true);
-    html += row("Typ výroby", x.ProdType || "-");
+    html += row("Typ výroby", x.p || "-");
     if(showA && bmA !== null) html += row("Benchmark A", bmA);
     if(showB && bmB !== null) html += row("Benchmark B", bmB);
     if(vysledek !== null){
@@ -148,12 +156,12 @@ function calculate(){
     // Karta Other Countries
     otherData.forEach(x => {
       let nomVal = "";
-      if(year === "2026") nomVal = x.Nominal_2026;
-      else if(year === "2027") nomVal = x.Nominal_2027;
-      else if(year === "2028") nomVal = x.Nominal_2028;
+      if(year === "2026") nomVal = x.n6;
+      else if(year === "2027") nomVal = x.n7;
+      else if(year === "2028") nomVal = x.n8;
 
-      const bmA = getBenchmark(hs, x.ProdType, "A", year);
-      const bmB = getBenchmark(hs, x.ProdType, "B", year);
+      const bmA = getBenchmark(hs, x.p, "A", year);
+      const bmB = getBenchmark(hs, x.p, "B", year);
 
       let vysledek = null;
       const nomNum = parseFloat(nomVal);
@@ -165,9 +173,9 @@ function calculate(){
       html += `<div class="section">`;
       html += `<div class="section-header">Ostatní země a území</div>`;
       html += `<div class="section-body">`;
-      html += renderDescription(x.Description);
+      html += renderDescription(x.d);
       html += row("Nominální hodnota", nomVal, true);
-      html += row("Typ výroby", x.ProdType || "-");
+      html += row("Typ výroby", x.p || "-");
       if(showA && bmA !== null) html += row("Benchmark A", bmA);
       if(showB && bmB !== null) html += row("Benchmark B", bmB);
       if(vysledek !== null){
