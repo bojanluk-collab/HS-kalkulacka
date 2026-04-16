@@ -86,9 +86,16 @@ function calculate(){
   }
 
   let data = nominal.filter(x => x.HS === hs);
+  const allForHS = data;
   if(country) data = data.filter(x => x.Country.toLowerCase() === country);
 
-  if(data.length === 0){
+  // Pokud hledáme konkrétní zemi ale HS tam není, přidáme _Other Countries
+  let otherData = [];
+  if(country && data.length === 0){
+    otherData = allForHS.filter(x => x.Country === '_Other Countries and Territorie');
+  }
+
+  if(data.length === 0 && otherData.length === 0){
     document.getElementById('result').innerHTML = '<p class="error">Žádné výsledky nenalezeny.</p>';
     return;
   }
@@ -128,6 +135,50 @@ function calculate(){
     }
     html += `</div></div>`;
   });
+
+  // Přidej kartu _Other Countries pokud hledáme zemi která HS nemá
+  if(otherData.length > 0){
+    const searchedCountry = document.getElementById('country').value.trim();
+    // Prázdná karta hledané země
+    html += `<div class="section">`;
+    html += `<div class="section-header">${searchedCountry} <span style="font-size:11px;font-weight:400;opacity:0.7">— v datech nenalezeno</span></div>`;
+    html += `<div class="section-body"><p style="font-size:13px;color:var(--mid);margin:4px 0">Pro tuto zemi nejsou dostupné specifické hodnoty. Použijte výpočet níže.</p></div>`;
+    html += `</div>`;
+
+    // Karta Other Countries
+    otherData.forEach(x => {
+      let nomVal = "";
+      if(year === "2026") nomVal = x.Nominal_2026;
+      else if(year === "2027") nomVal = x.Nominal_2027;
+      else if(year === "2028") nomVal = x.Nominal_2028;
+
+      const bmA = getBenchmark(hs, x.ProdType, "A", year);
+      const bmB = getBenchmark(hs, x.ProdType, "B", year);
+
+      let vysledek = null;
+      const nomNum = parseFloat(nomVal);
+      const bmBNum = parseFloat(bmB);
+      if(!isNaN(nomNum) && !isNaN(bmBNum)){
+        vysledek = (nomNum - (bmBNum * alokace)) * cenaPovolenky;
+      }
+
+      html += `<div class="section">`;
+      html += `<div class="section-header">Ostatní země a území</div>`;
+      html += `<div class="section-body">`;
+      html += renderDescription(x.Description);
+      html += row("Nominální hodnota", nomVal, true);
+      html += row("Typ výroby", x.ProdType || "-");
+      if(showA && bmA !== null) html += row("Benchmark A", bmA);
+      if(showB && bmB !== null) html += row("Benchmark B", bmB);
+      if(vysledek !== null){
+        html += `<div class="result-row">
+          <span class="result-row-label">Výsledná částka / t</span>
+          <span class="result-row-val">${vysledek.toFixed(2)} EUR</span>
+        </div>`;
+      }
+      html += `</div></div>`;
+    });
+  }
 
   document.getElementById('result').innerHTML = html;
   attachMoreButtons();
